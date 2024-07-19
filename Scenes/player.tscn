@@ -1,0 +1,695 @@
+[gd_scene load_steps=52 format=3 uid="uid://bkyjn37rbc7hs"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_8avm5"]
+[ext_resource type="Texture2D" uid="uid://d2b7l5wyy6pi1" path="res://Assets/Sprites/Player/Main guy idle.png" id="2_uk221"]
+[ext_resource type="Texture2D" uid="uid://c0saf7yvhyggu" path="res://Assets/Sprites/Player/Axe _ mele.png" id="3_x1bg1"]
+[ext_resource type="Texture2D" uid="uid://bqrrxaywb68ct" path="res://Assets/Sprites/Player/Main guy grab gun.png" id="4_eygff"]
+[ext_resource type="Texture2D" uid="uid://bachy7gx4421g" path="res://Assets/Sprites/Player/Main guy run.png" id="5_khhcn"]
+[ext_resource type="Texture2D" uid="uid://c6sona1qqwgaw" path="res://Assets/Sprites/Player/Main guy shoot.png" id="6_6ey0k"]
+[ext_resource type="Texture2D" uid="uid://bwf24nlw8ow1i" path="res://Assets/Sprites/Player/Main guy walk.png" id="7_dmdcy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyx8b"]
+atlas = ExtResource("2_uk221")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdpjt"]
+atlas = ExtResource("2_uk221")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7psym"]
+atlas = ExtResource("2_uk221")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i6su"]
+atlas = ExtResource("2_uk221")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6nmu"]
+atlas = ExtResource("2_uk221")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lyon"]
+atlas = ExtResource("2_uk221")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1kr0"]
+atlas = ExtResource("3_x1bg1")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukqy7"]
+atlas = ExtResource("3_x1bg1")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7cw3"]
+atlas = ExtResource("3_x1bg1")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sghi"]
+atlas = ExtResource("3_x1bg1")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb5tt"]
+atlas = ExtResource("3_x1bg1")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um2w1"]
+atlas = ExtResource("4_eygff")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pcnv"]
+atlas = ExtResource("4_eygff")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sfv5"]
+atlas = ExtResource("4_eygff")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j683j"]
+atlas = ExtResource("4_eygff")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jou7e"]
+atlas = ExtResource("4_eygff")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc3dl"]
+atlas = ExtResource("5_khhcn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f85m"]
+atlas = ExtResource("5_khhcn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80ows"]
+atlas = ExtResource("5_khhcn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq2ir"]
+atlas = ExtResource("5_khhcn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n3jj"]
+atlas = ExtResource("5_khhcn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n77oh"]
+atlas = ExtResource("5_khhcn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y40n"]
+atlas = ExtResource("5_khhcn")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhxk5"]
+atlas = ExtResource("5_khhcn")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhn5r"]
+atlas = ExtResource("5_khhcn")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rww2h"]
+atlas = ExtResource("6_6ey0k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14ljd"]
+atlas = ExtResource("6_6ey0k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfvkn"]
+atlas = ExtResource("6_6ey0k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq87a"]
+atlas = ExtResource("7_dmdcy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h020v"]
+atlas = ExtResource("7_dmdcy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt63g"]
+atlas = ExtResource("7_dmdcy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfhrs"]
+atlas = ExtResource("7_dmdcy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr8ld"]
+atlas = ExtResource("7_dmdcy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a42mt"]
+atlas = ExtResource("7_dmdcy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqlce"]
+atlas = ExtResource("7_dmdcy")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nywag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyx8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdpjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7psym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i6su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6nmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lyon")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1kr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukqy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7cw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sghi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb5tt")
+}],
+"loop": true,
+"name": &"melee",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um2w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pcnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sfv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j683j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jou7e")
+}],
+"loop": false,
+"name": &"ready_gun",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"repair",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc3dl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f85m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80ows")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq2ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n3jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n77oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y40n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhxk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhn5r")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rww2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14ljd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfvkn")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq87a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h020v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt63g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfhrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr8ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a42mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqlce")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vh28k"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqhf5"]
+atlas = ExtResource("2_uk221")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqp1e"]
+atlas = ExtResource("2_uk221")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo5wn"]
+atlas = ExtResource("2_uk221")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3orgq"]
+atlas = ExtResource("2_uk221")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awbue"]
+atlas = ExtResource("2_uk221")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th158"]
+atlas = ExtResource("2_uk221")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6n7we"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqhf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqp1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uo5wn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3orgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awbue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th158")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_8avm5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_nywag")
+animation = &"shoot"
+autoplay = "idle"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6)
+shape = SubResource("CircleShape2D_vh28k")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+visible = false
+offset_top = 574.0
+offset_right = 1150.0
+offset_bottom = 646.0
+color = Color(0.597176, 0.597176, 0.597176, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="HUD"]
+offset_left = 144.0
+offset_top = 590.0
+offset_right = 445.0
+offset_bottom = 608.0
+color = Color(0.313726, 0.584314, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="HUD"]
+offset_left = 144.0
+offset_top = 619.0
+offset_right = 445.0
+offset_bottom = 637.0
+color = Color(0.811765, 0.117647, 0.113725, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="HUD"]
+offset_left = 12.0
+offset_top = 486.0
+offset_right = 78.0
+offset_bottom = 643.0
+color = Color(0.972549, 1, 0.0745098, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="HUD"]
+offset_left = 453.0
+offset_top = 595.0
+offset_right = 493.0
+offset_bottom = 635.0
+
+[node name="ColorRect6" type="ColorRect" parent="HUD"]
+offset_left = 498.0
+offset_top = 595.0
+offset_right = 538.0
+offset_bottom = 635.0
+
+[node name="ColorRect7" type="ColorRect" parent="HUD"]
+offset_left = 544.0
+offset_top = 595.0
+offset_right = 584.0
+offset_bottom = 635.0
+
+[node name="ColorRect8" type="ColorRect" parent="HUD"]
+offset_left = 589.0
+offset_top = 595.0
+offset_right = 629.0
+offset_bottom = 635.0
+
+[node name="ColorRect9" type="ColorRect" parent="HUD"]
+offset_left = 634.0
+offset_top = 596.0
+offset_right = 674.0
+offset_bottom = 636.0
+
+[node name="ColorRect10" type="ColorRect" parent="HUD"]
+offset_left = 680.0
+offset_top = 596.0
+offset_right = 720.0
+offset_bottom = 636.0
+
+[node name="ColorRect11" type="ColorRect" parent="HUD"]
+offset_left = 724.0
+offset_top = 596.0
+offset_right = 764.0
+offset_bottom = 636.0
+
+[node name="ColorRect12" type="ColorRect" parent="HUD"]
+offset_left = 769.0
+offset_top = 596.0
+offset_right = 809.0
+offset_bottom = 636.0
+
+[node name="ColorRect13" type="ColorRect" parent="HUD"]
+offset_left = 815.0
+offset_top = 596.0
+offset_right = 855.0
+offset_bottom = 636.0
+
+[node name="ColorRect14" type="ColorRect" parent="HUD"]
+offset_left = 860.0
+offset_top = 596.0
+offset_right = 900.0
+offset_bottom = 636.0
+
+[node name="ColorRect15" type="ColorRect" parent="HUD"]
+offset_left = 905.0
+offset_top = 597.0
+offset_right = 945.0
+offset_bottom = 637.0
+
+[node name="Label" type="Label" parent="HUD"]
+offset_left = 86.0
+offset_top = 586.0
+offset_right = 136.0
+offset_bottom = 609.0
+text = "health"
+
+[node name="Label2" type="Label" parent="HUD"]
+offset_left = 89.0
+offset_top = 616.0
+offset_right = 139.0
+offset_bottom = 639.0
+text = "rads"
+
+[node name="HUD inv" type="Button" parent="HUD"]
+offset_left = 969.0
+offset_top = 598.0
+offset_right = 1052.0
+offset_bottom = 629.0
+text = "Inventory"
+
+[node name="HUD set" type="Button" parent="HUD"]
+offset_left = 1068.0
+offset_top = 598.0
+offset_right = 1138.0
+offset_bottom = 629.0
+text = "Settings"
+
+[node name="Settings" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Settings"]
+offset_left = 86.0
+offset_top = 20.0
+offset_right = 1125.0
+offset_bottom = 564.0
+color = Color(0.654232, 0.654232, 0.654232, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Settings"]
+offset_left = 98.0
+offset_top = 31.0
+offset_right = 483.0
+offset_bottom = 549.0
+
+[node name="ColorRect3" type="ColorRect" parent="Settings"]
+offset_left = 494.0
+offset_top = 58.0
+offset_right = 1110.0
+offset_bottom = 502.0
+
+[node name="Label" type="Label" parent="Settings"]
+offset_left = 102.0
+offset_top = 39.0
+offset_right = 164.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Settings"
+
+[node name="Label2" type="Label" parent="Settings"]
+offset_left = 504.0
+offset_top = 73.0
+offset_right = 566.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Controls"
+
+[node name="Button" type="Button" parent="Settings"]
+offset_left = 649.0
+offset_top = 514.0
+offset_right = 693.0
+offset_bottom = 545.0
+text = "Save"
+
+[node name="Set close" type="Button" parent="Settings"]
+offset_left = 1061.0
+offset_top = 24.0
+offset_right = 1105.0
+offset_bottom = 55.0
+text = "Close"
+
+[node name="Button2" type="Button" parent="Settings"]
+offset_left = 862.0
+offset_top = 515.0
+offset_right = 906.0
+offset_bottom = 546.0
+text = "Quit"
+
+[node name="Inventory" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Inventory"]
+offset_left = 86.0
+offset_top = 20.0
+offset_right = 1125.0
+offset_bottom = 564.0
+color = Color(0.654232, 0.654232, 0.654232, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Inventory"]
+position = Vector2(795, 300)
+scale = Vector2(12, 12)
+sprite_frames = SubResource("SpriteFrames_6n7we")
+autoplay = "default"
+frame_progress = 0.261528
+
+[node name="ColorRect2" type="ColorRect" parent="Inventory"]
+offset_left = 604.0
+offset_top = 358.0
+offset_right = 682.0
+offset_bottom = 436.0
+
+[node name="ColorRect4" type="ColorRect" parent="Inventory"]
+offset_left = 603.0
+offset_top = 179.0
+offset_right = 682.0
+offset_bottom = 272.0
+
+[node name="ColorRect3" type="ColorRect" parent="Inventory"]
+offset_left = 871.0
+offset_top = 181.0
+offset_right = 1105.0
+offset_bottom = 438.0
+
+[node name="ColorRect6" type="ColorRect" parent="Inventory"]
+offset_left = 111.0
+offset_top = 376.0
+offset_right = 573.0
+offset_bottom = 544.0
+
+[node name="ColorRect5" type="ColorRect" parent="Inventory"]
+offset_left = 111.0
+offset_top = 41.0
+offset_right = 572.0
+offset_bottom = 360.0
+
+[node name="Label" type="Label" parent="Inventory"]
+offset_left = 881.0
+offset_top = 190.0
+offset_right = 943.0
+offset_bottom = 213.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Abilities:"
+
+[node name="Label6" type="Label" parent="Inventory"]
+offset_left = 872.0
+offset_top = 102.0
+offset_right = 939.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Energy:"
+
+[node name="Label7" type="Label" parent="Inventory"]
+offset_left = 873.0
+offset_top = 131.0
+offset_right = 940.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Rads:"
+
+[node name="Label4" type="Label" parent="Inventory"]
+offset_left = 123.0
+offset_top = 55.0
+offset_right = 185.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Cell list"
+
+[node name="Label5" type="Label" parent="Inventory"]
+offset_left = 119.0
+offset_top = 390.0
+offset_right = 181.0
+offset_bottom = 413.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ability of selected cell"
+
+[node name="Label2" type="Label" parent="Inventory"]
+offset_left = 596.0
+offset_top = 157.0
+offset_right = 688.0
+offset_bottom = 180.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Suit Battery"
+
+[node name="Label3" type="Label" parent="Inventory"]
+offset_left = 604.0
+offset_top = 332.0
+offset_right = 696.0
+offset_bottom = 355.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ship Cell"
+
+[node name="Button" type="Button" parent="Inventory"]
+offset_left = 588.0
+offset_top = 45.0
+offset_right = 681.0
+offset_bottom = 76.0
+text = "Add to Suit"
+
+[node name="Button3" type="Button" parent="Inventory"]
+offset_left = 598.0
+offset_top = 277.0
+offset_right = 691.0
+offset_bottom = 308.0
+text = "Remove"
+
+[node name="Button4" type="Button" parent="Inventory"]
+offset_left = 597.0
+offset_top = 443.0
+offset_right = 690.0
+offset_bottom = 474.0
+text = "Remove"
+
+[node name="Button2" type="Button" parent="Inventory"]
+offset_left = 581.0
+offset_top = 99.0
+offset_right = 690.0
+offset_bottom = 130.0
+text = "Save for Ship"
+
+[node name="Inv close" type="Button" parent="Inventory"]
+offset_left = 1049.0
+offset_top = 28.0
+offset_right = 1115.0
+offset_bottom = 59.0
+text = "Close"
+
+[node name="ColorRect7" type="ColorRect" parent="Inventory"]
+offset_left = 144.0
+offset_top = 590.0
+offset_right = 445.0
+offset_bottom = 608.0
+color = Color(0.313726, 0.584314, 0, 1)
+
+[connection signal="pressed" from="HUD/HUD inv" to="." method="_on_hud_inv_pressed"]
+[connection signal="pressed" from="HUD/HUD set" to="." method="_on_hud_set_pressed"]
+[connection signal="pressed" from="Settings/Set close" to="." method="_on_set_close_pressed"]
+[connection signal="pressed" from="Inventory/Inv close" to="." method="_on_inv_close_pressed"]
