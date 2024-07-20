@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrrxaywb68ct"
-path="res://.godot/imported/Main guy grab gun.png-b61f23e3e565648396b7b176b40d08c9.ctex"
+uid="uid://pqkiphafy2ul"
+path="res://.godot/imported/Main guy grab gun top.png-bd83ac8d2f9df1679de918ceb4c9e7ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Player/Main guy grab gun.png"
-dest_files=["res://.godot/imported/Main guy grab gun.png-b61f23e3e565648396b7b176b40d08c9.ctex"]
+source_file="res://Assets/Sprites/player_sprite/player_top/Main guy grab gun top.png"
+dest_files=["res://.godot/imported/Main guy grab gun top.png-bd83ac8d2f9df1679de918ceb4c9e7ce.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0saf7yvhyggu"
-path="res://.godot/imported/Axe _ mele.png-80886e4762d65b5ca0ff4c3535ad3286.ctex"
+uid="uid://crmlav2pon6uo"
+path="res://.godot/imported/Main guy shoot top static.png-651fcfd8ad8dc11f82251a68aeff993f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Player/Axe _ mele.png"
-dest_files=["res://.godot/imported/Axe _ mele.png-80886e4762d65b5ca0ff4c3535ad3286.ctex"]
+source_file="res://Assets/Sprites/player_sprite/player_top/Main guy shoot top static.png"
+dest_files=["res://.godot/imported/Main guy shoot top static.png-651fcfd8ad8dc11f82251a68aeff993f.ctex"]
 
 [params]
 

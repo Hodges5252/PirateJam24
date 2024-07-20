@@ -1,41 +1,65 @@
 extends CharacterBody2D
 
 @export var speed = 100
+@export var can_attack = true
 var can_move = true
+var melee = false
+var playing = false
+
 
 func _ready():
-	$AnimatedSprite2D.play("idle")
+	play_whole("idle")
 
 func get_input():
 	if can_move:
 		var input_direction = Input.get_vector("left", "right", "up", "down")
 		if Input.is_action_pressed("right"):
 			if speed <= 100:
-				$AnimatedSprite2D.play("walk")
-				$AnimatedSprite2D.flip_h = false
+				play_whole("walk")
+				flip_sprites(false) 
 			else:
-				$AnimatedSprite2D.play("run")
-				$AnimatedSprite2D.flip_h = false
+				sync_play("run")
+				flip_sprites(false) 
 		elif Input.is_action_pressed("left"):
 			if speed <= 100:
-				$AnimatedSprite2D.play("walk")
-				$AnimatedSprite2D.flip_h = true
+				play_whole("walk")
+				flip_sprites(true) 
 			else:
-				$AnimatedSprite2D.play("run")
-				$AnimatedSprite2D.flip_h = true
+				sync_play("run")
+				flip_sprites(true)
 		elif Input.is_action_pressed("up"):
 			if speed <= 100:
-				$AnimatedSprite2D.play("walk")
+				play_whole("walk")
 			else:
-				$AnimatedSprite2D.play("run")
+				sync_play("run")
 		elif Input.is_action_pressed("down"):
 			if speed <= 100:
-				$AnimatedSprite2D.play("walk")
+				play_whole("walk")
 			else:
-				$AnimatedSprite2D.play("run")
+				sync_play("run")
 		else:
-			$AnimatedSprite2D.play("idle")
+			play_whole("idle")
 		velocity = input_direction * speed
+	if can_attack:
+		if Input.is_action_just_pressed("shoot"):
+			if velocity != Vector2(0,0):
+				if melee:
+					$top.play("melee")
+				else:
+					$top.play("shoot")
+				playing = true
+			else:
+				if melee:
+					play_whole("melee")
+				else:
+					play_whole("shoot")
+				playing = true
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		#print("Mouse Motion at: ", event.position)
+		$mouse.global_position = get_global_mouse_position()
+		#print("Box is at: ", $mouse.position)
 
 func _process(delta):
 	get_input()
@@ -44,6 +68,29 @@ func _process(delta):
 func toggle_walk(can_walk):
 	can_move = can_walk
 
+func sync_play(name):
+	if $whole.visible:
+		$whole.set_visible(false)
+	if not $top.visible:
+		$top.set_visible(true)
+		$bottom.set_visible(true)
+	if not playing:
+		$top.play(name)
+	$bottom.play(name)
+
+func play_whole(name):
+	if $top.visible:
+		$top.set_visible(false)
+		$bottom.set_visible(false)
+	if not $whole.visible:
+		$whole.set_visible(true)
+	if not playing:
+		$whole.play(name)
+
+func flip_sprites(setter):
+	$whole.flip_h = setter
+	$top.flip_h = setter
+	$bottom.flip_h = setter
 
 func _on_inv_close_pressed():
 	$Inventory.set_visible(false)
@@ -75,3 +122,22 @@ func _on_hud_set_pressed():
 func _on_set_close_pressed():
 	$Settings.set_visible(false)
 	toggle_walk(true)
+
+
+
+func _on_top_animation_finished():
+	playing = false
+
+
+func _on_whole_animation_finished():
+	playing = false
+
+
+func _on_melee_range_area_entered(area):
+	melee = true
+	print("mouse in!")
+
+
+func _on_melee_range_area_exited(area):
+	melee = false
+	print("mouse out!")

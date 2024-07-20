@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://crqlquu144ff0"]
+
+[ext_resource type="Texture2D" uid="uid://cxrwj64nm46th" path="res://Assets/Sprites/map.png" id="1_iu0iq"]
+[ext_resource type="PackedScene" uid="uid://bkyjn37rbc7hs" path="res://Scenes/player.tscn" id="2_wvsxa"]
+
+[node name="Outside" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iu0iq")
+
+[node name="Player" parent="." instance=ExtResource("2_wvsxa")]
+speed = 150
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
