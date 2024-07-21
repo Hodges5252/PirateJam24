@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://crqlquu144ff0"]
+[gd_scene load_steps=4 format=3 uid="uid://crqlquu144ff0"]
 
 [ext_resource type="Texture2D" uid="uid://cxrwj64nm46th" path="res://Assets/Sprites/map.png" id="1_iu0iq"]
 [ext_resource type="PackedScene" uid="uid://bkyjn37rbc7hs" path="res://Scenes/player.tscn" id="2_wvsxa"]
+[ext_resource type="PackedScene" uid="uid://dqkc2m0fuyhvp" path="res://Scenes/collectables/tree.tscn" id="3_xso0q"]
 
 [node name="Outside" type="Node2D"]
 
@@ -13,3 +14,6 @@ speed = 150
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
+
+[node name="Tree" parent="." instance=ExtResource("3_xso0q")]
+position = Vector2(110, 0)

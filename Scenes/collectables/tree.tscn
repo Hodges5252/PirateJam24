@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=3 uid="uid://dqkc2m0fuyhvp"]
+
+[ext_resource type="Script" path="res://Scripts/collectables.gd" id="1_b7bk8"]
+[ext_resource type="Texture2D" uid="uid://kjqlh4kphs2x" path="res://Assets/Sprites/Collectables/Hit dead tree 1.png" id="2_6tsrx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hloba"]
+atlas = ExtResource("2_6tsrx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmroi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hloba")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8b5x"]
+atlas = ExtResource("2_6tsrx")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_byefp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8b5x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygxbs"]
+atlas = ExtResource("2_6tsrx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n36fa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygxbs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2elp"]
+atlas = ExtResource("2_6tsrx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gffba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2elp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nd5r"]
+size = Vector2(12, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8si1"]
+size = Vector2(54, 60)
+
+[node name="Tree" type="StaticBody2D"]
+script = ExtResource("1_b7bk8")
+
+[node name="OutlineBot" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_kmroi")
+
+[node name="OutlineTop" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_byefp")
+
+[node name="TreeTop" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_n36fa")
+
+[node name="TreeBottom" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_gffba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -20.5)
+shape = SubResource("RectangleShape2D_8nd5r")
+
+[node name="hilight" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hilight"]
+position = Vector2(-3, -30)
+shape = SubResource("RectangleShape2D_m8si1")
+
+[connection signal="area_entered" from="hilight" to="." method="_on_hilight_area_entered"]
+[connection signal="area_exited" from="hilight" to="." method="_on_hilight_area_exited"]

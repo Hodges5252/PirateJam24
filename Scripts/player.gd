@@ -42,18 +42,36 @@ func get_input():
 		velocity = input_direction * speed
 	if can_attack:
 		if Input.is_action_just_pressed("shoot"):
-			if velocity != Vector2(0,0):
-				if melee:
-					$top.play("melee")
-				else:
-					$top.play("shoot")
-				playing = true
+			if melee:
+				melee_attack()
 			else:
-				if melee:
-					play_whole("melee")
-				else:
-					play_whole("shoot")
-				playing = true
+				shoot()
+
+func melee_attack():
+	if velocity != Vector2(0,0):
+		$top.play("melee")
+		playing = true
+	else:
+		play_whole("melee")
+		playing = true
+		
+	if $MeleeRange.has_overlapping_areas():
+		var area_list = $MeleeRange.get_overlapping_areas()
+		for areas in area_list:
+			var parent = areas.get_parent()
+			var grandparent = parent.get_parent()
+			if parent.has_method("break_col"):
+				parent.break_col()
+
+
+func shoot():
+	if velocity != Vector2(0,0):
+		$top.play("shoot")
+		playing = true
+	else:
+		play_whole("shoot")
+		playing = true
+
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -135,9 +153,7 @@ func _on_whole_animation_finished():
 
 func _on_melee_range_area_entered(area):
 	melee = true
-	print("mouse in!")
 
 
 func _on_melee_range_area_exited(area):
 	melee = false
-	print("mouse out!")

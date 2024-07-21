@@ -14,6 +14,10 @@ config/name="InTheShadowOfStars"
 run/main_scene="res://Scenes/base.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
+[autoload]
+
+Inventory="*res://Scripts/Inventory.gd"
+
 [input]
 
 up={

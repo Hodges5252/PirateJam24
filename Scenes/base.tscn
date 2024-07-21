@@ -467,13 +467,14 @@ offset_bottom = 70.0
 text = "Close"
 
 [node name="Player" parent="." instance=ExtResource("1_4681p")]
+can_attack = false
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
-limit_left = -255
-limit_top = -270
-limit_right = 240
-limit_bottom = 30
+limit_left = -285
+limit_top = -315
+limit_right = 295
+limit_bottom = 50
 editor_draw_limits = true
 
 [connection signal="body_entered" from="Drill" to="." method="_on_drill_body_entered"]

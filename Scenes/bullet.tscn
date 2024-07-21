@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq2mg8sf57vp7"]
+
+[ext_resource type="Texture2D" uid="uid://rlvbsasfx1op" path="res://Assets/Sprites/Laser beam pew pew.png" id="1_e2qw7"]
+
+[node name="Bullet" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("1_e2qw7")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=95 format=3 uid="uid://bkyjn37rbc7hs"]
+[gd_scene load_steps=96 format=3 uid="uid://bkyjn37rbc7hs"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8avm5"]
 [ext_resource type="Texture2D" uid="uid://dc22l4i2ud0hl" path="res://Assets/Sprites/player_sprite/whole/Main guy idle.png" id="2_h431t"]
+[ext_resource type="PackedScene" uid="uid://dbmoavcar0arr" path="res://Scenes/hud.tscn" id="2_xprmu"]
 [ext_resource type="Texture2D" uid="uid://m06lwgp8lecy" path="res://Assets/Sprites/player_sprite/whole/Axe mele.png" id="3_y85v1"]
 [ext_resource type="Texture2D" uid="uid://ddyeo3e7y8v8q" path="res://Assets/Sprites/player_sprite/whole/Main guy grab gun.png" id="4_f6o5m"]
 [ext_resource type="Texture2D" uid="uid://c3vlylmrcuy20" path="res://Assets/Sprites/player_sprite/whole/Main guy shoot.png" id="6_fvx6i"]
@@ -596,6 +597,8 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_8avm5")
 
+[node name="HUD" parent="." instance=ExtResource("2_xprmu")]
+
 [node name="mouse" type="Area2D" parent="."]
 position = Vector2(30, -21)
 collision_layer = 4
@@ -606,6 +609,7 @@ shape = SubResource("CircleShape2D_dx0n0")
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="mouse"]
+visible = false
 z_index = 3
 offset_left = -4.0
 offset_top = -4.0
@@ -614,13 +618,15 @@ offset_bottom = 4.0
 metadata/_edit_lock_ = true
 
 [node name="whole" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_nywag")
-animation = &"idle"
+animation = &"shoot"
 autoplay = "idle"
 
 [node name="bottom" type="AnimatedSprite2D" parent="."]
 visible = false
+z_index = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_6vqtw")
 animation = &"run"
@@ -628,6 +634,7 @@ frame_progress = 0.593862
 
 [node name="top" type="AnimatedSprite2D" parent="."]
 visible = false
+z_index = 1
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_7b5o0")
 animation = &"melee"
@@ -637,134 +644,135 @@ visible = false
 position = Vector2(-1, -6)
 shape = SubResource("CircleShape2D_vh28k")
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD_old" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="ColorRect" type="ColorRect" parent="HUD"]
+[node name="ColorRect" type="ColorRect" parent="HUD_old"]
 visible = false
 offset_top = 574.0
 offset_right = 1150.0
 offset_bottom = 646.0
 color = Color(0.597176, 0.597176, 0.597176, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="HUD"]
+[node name="ColorRect2" type="ColorRect" parent="HUD_old"]
 offset_left = 144.0
 offset_top = 590.0
 offset_right = 445.0
 offset_bottom = 608.0
 color = Color(0.313726, 0.584314, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="HUD"]
+[node name="ColorRect3" type="ColorRect" parent="HUD_old"]
 offset_left = 144.0
 offset_top = 619.0
 offset_right = 445.0
 offset_bottom = 637.0
 color = Color(0.811765, 0.117647, 0.113725, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="HUD"]
+[node name="ColorRect4" type="ColorRect" parent="HUD_old"]
 offset_left = 12.0
 offset_top = 486.0
 offset_right = 78.0
 offset_bottom = 643.0
 color = Color(0.972549, 1, 0.0745098, 1)
 
-[node name="ColorRect5" type="ColorRect" parent="HUD"]
+[node name="ColorRect5" type="ColorRect" parent="HUD_old"]
 offset_left = 453.0
 offset_top = 595.0
 offset_right = 493.0
 offset_bottom = 635.0
 
-[node name="ColorRect6" type="ColorRect" parent="HUD"]
+[node name="ColorRect6" type="ColorRect" parent="HUD_old"]
 offset_left = 498.0
 offset_top = 595.0
 offset_right = 538.0
 offset_bottom = 635.0
 
-[node name="ColorRect7" type="ColorRect" parent="HUD"]
+[node name="ColorRect7" type="ColorRect" parent="HUD_old"]
 offset_left = 544.0
 offset_top = 595.0
 offset_right = 584.0
 offset_bottom = 635.0
 
-[node name="ColorRect8" type="ColorRect" parent="HUD"]
+[node name="ColorRect8" type="ColorRect" parent="HUD_old"]
 offset_left = 589.0
 offset_top = 595.0
 offset_right = 629.0
 offset_bottom = 635.0
 
-[node name="ColorRect9" type="ColorRect" parent="HUD"]
+[node name="ColorRect9" type="ColorRect" parent="HUD_old"]
 offset_left = 634.0
 offset_top = 596.0
 offset_right = 674.0
 offset_bottom = 636.0
 
-[node name="ColorRect10" type="ColorRect" parent="HUD"]
+[node name="ColorRect10" type="ColorRect" parent="HUD_old"]
 offset_left = 680.0
 offset_top = 596.0
 offset_right = 720.0
 offset_bottom = 636.0
 
-[node name="ColorRect11" type="ColorRect" parent="HUD"]
+[node name="ColorRect11" type="ColorRect" parent="HUD_old"]
 offset_left = 724.0
 offset_top = 596.0
 offset_right = 764.0
 offset_bottom = 636.0
 
-[node name="ColorRect12" type="ColorRect" parent="HUD"]
+[node name="ColorRect12" type="ColorRect" parent="HUD_old"]
 offset_left = 769.0
 offset_top = 596.0
 offset_right = 809.0
 offset_bottom = 636.0
 
-[node name="ColorRect13" type="ColorRect" parent="HUD"]
+[node name="ColorRect13" type="ColorRect" parent="HUD_old"]
 offset_left = 815.0
 offset_top = 596.0
 offset_right = 855.0
 offset_bottom = 636.0
 
-[node name="ColorRect14" type="ColorRect" parent="HUD"]
+[node name="ColorRect14" type="ColorRect" parent="HUD_old"]
 offset_left = 860.0
 offset_top = 596.0
 offset_right = 900.0
 offset_bottom = 636.0
 
-[node name="ColorRect15" type="ColorRect" parent="HUD"]
+[node name="ColorRect15" type="ColorRect" parent="HUD_old"]
 offset_left = 905.0
 offset_top = 597.0
 offset_right = 945.0
 offset_bottom = 637.0
 
-[node name="Label" type="Label" parent="HUD"]
+[node name="Label" type="Label" parent="HUD_old"]
 offset_left = 86.0
 offset_top = 586.0
 offset_right = 136.0
 offset_bottom = 609.0
 text = "health"
 
-[node name="Label2" type="Label" parent="HUD"]
+[node name="Label2" type="Label" parent="HUD_old"]
 offset_left = 89.0
 offset_top = 616.0
 offset_right = 139.0
 offset_bottom = 639.0
 text = "rads"
 
-[node name="HUD inv" type="Button" parent="HUD"]
+[node name="HUD inv" type="Button" parent="HUD_old"]
 offset_left = 969.0
 offset_top = 598.0
 offset_right = 1052.0
 offset_bottom = 629.0
 text = "Inventory"
 
-[node name="HUD set" type="Button" parent="HUD"]
+[node name="HUD set" type="Button" parent="HUD_old"]
 offset_left = 1068.0
 offset_top = 598.0
 offset_right = 1138.0
 offset_bottom = 629.0
 text = "Settings"
 
-[node name="Inventory" type="CanvasGroup" parent="HUD"]
+[node name="Inventory" type="CanvasGroup" parent="HUD_old"]
 visible = false
 
-[node name="Control" type="Control" parent="HUD/Inventory"]
+[node name="Control" type="Control" parent="HUD_old/Inventory"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 554.0
@@ -772,7 +780,7 @@ offset_right = 1155.0
 offset_bottom = 612.0
 scale = Vector2(0.999621, 1.65491)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Inventory/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD_old/Inventory/Control"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -782,39 +790,39 @@ offset_top = -64.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="HUD/Inventory/Control/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HUD_old/Inventory/Control/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 texture = ExtResource("13_vgnl1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Inventory/Control/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD_old/Inventory/Control/HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HUD/Inventory/Control/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HUD_old/Inventory/Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("14_8tvwf")
 
-[node name="TextureRect2" type="TextureRect" parent="HUD/Inventory/Control/HBoxContainer/VBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="HUD_old/Inventory/Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("15_gefo1")
 
-[node name="TextureRect2" type="TextureRect" parent="HUD/Inventory/Control/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="HUD_old/Inventory/Control/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("16_mawhh")
 
-[node name="TextureRect3" type="TextureRect" parent="HUD/Inventory/Control/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="HUD_old/Inventory/Control/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("16_mawhh")
 
-[node name="TextureRect4" type="TextureRect" parent="HUD/Inventory/Control/HBoxContainer"]
+[node name="TextureRect4" type="TextureRect" parent="HUD_old/Inventory/Control/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("16_mawhh")
 
-[node name="TextureRect5" type="TextureRect" parent="HUD/Inventory/Control/HBoxContainer"]
+[node name="TextureRect5" type="TextureRect" parent="HUD_old/Inventory/Control/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("16_mawhh")
 
-[node name="TextureRect6" type="TextureRect" parent="HUD/Inventory/Control/HBoxContainer"]
+[node name="TextureRect6" type="TextureRect" parent="HUD_old/Inventory/Control/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("16_mawhh")
 
@@ -1030,10 +1038,13 @@ collision_mask = 4
 position = Vector2(-1, -29)
 shape = SubResource("CircleShape2D_egx21")
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(7, -17)
+
 [connection signal="animation_finished" from="whole" to="." method="_on_whole_animation_finished"]
 [connection signal="animation_finished" from="top" to="." method="_on_top_animation_finished"]
-[connection signal="pressed" from="HUD/HUD inv" to="." method="_on_hud_inv_pressed"]
-[connection signal="pressed" from="HUD/HUD set" to="." method="_on_hud_set_pressed"]
+[connection signal="pressed" from="HUD_old/HUD inv" to="." method="_on_hud_inv_pressed"]
+[connection signal="pressed" from="HUD_old/HUD set" to="." method="_on_hud_set_pressed"]
 [connection signal="pressed" from="Settings/Set close" to="." method="_on_set_close_pressed"]
 [connection signal="pressed" from="Inventory/Inv close" to="." method="_on_inv_close_pressed"]
 [connection signal="area_entered" from="MeleeRange" to="." method="_on_melee_range_area_entered"]
