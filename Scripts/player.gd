@@ -9,6 +9,7 @@ var playing = false
 
 func _ready():
 	play_whole("idle")
+	toggle_walk(false)
 
 func get_input():
 	if can_move:
@@ -42,10 +43,11 @@ func get_input():
 		velocity = input_direction * speed
 	if can_attack:
 		if Input.is_action_just_pressed("shoot"):
-			if melee:
-				melee_attack()
-			else:
-				shoot()
+			if not playing:
+				if melee:
+					melee_attack()
+				else:
+					shoot()
 
 func melee_attack():
 	if velocity != Vector2(0,0):
@@ -59,7 +61,6 @@ func melee_attack():
 		var area_list = $MeleeRange.get_overlapping_areas()
 		for areas in area_list:
 			var parent = areas.get_parent()
-			var grandparent = parent.get_parent()
 			if parent.has_method("break_col"):
 				parent.break_col()
 
@@ -71,6 +72,12 @@ func shoot():
 	else:
 		play_whole("shoot")
 		playing = true
+	const BULLET = preload("res://Scenes/bullet.tscn")
+	var new_bullet = BULLET.instantiate()
+	new_bullet.global_position = $ShootPoint.global_position
+	new_bullet.global_rotation = $ShootPoint.global_rotation
+	var parent = get_parent()
+	parent.add_child(new_bullet)
 
 
 func _input(event):
@@ -79,31 +86,32 @@ func _input(event):
 		$mouse.global_position = get_global_mouse_position()
 		#print("Box is at: ", $mouse.position)
 
-func _process(delta):
+func _process(_delta):
 	get_input()
 	move_and_slide()
+	$ShootPoint.look_at($mouse.global_position)
 
 func toggle_walk(can_walk):
 	can_move = can_walk
 
-func sync_play(name):
+func sync_play(anim):
 	if $whole.visible:
 		$whole.set_visible(false)
 	if not $top.visible:
 		$top.set_visible(true)
 		$bottom.set_visible(true)
 	if not playing:
-		$top.play(name)
-	$bottom.play(name)
+		$top.play(anim)
+	$bottom.play(anim)
 
-func play_whole(name):
+func play_whole(anim):
 	if $top.visible:
 		$top.set_visible(false)
 		$bottom.set_visible(false)
 	if not $whole.visible:
 		$whole.set_visible(true)
 	if not playing:
-		$whole.play(name)
+		$whole.play(anim)
 
 func flip_sprites(setter):
 	$whole.flip_h = setter
@@ -151,9 +159,9 @@ func _on_whole_animation_finished():
 	playing = false
 
 
-func _on_melee_range_area_entered(area):
+func _on_melee_range_area_entered(_area):
 	melee = true
 
 
-func _on_melee_range_area_exited(area):
+func _on_melee_range_area_exited(_area):
 	melee = false

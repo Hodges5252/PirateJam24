@@ -1,25 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmkgdc6vx2vpt"]
+[gd_scene load_steps=2 format=3 uid="uid://dmkgdc6vx2vpt"]
 
-[ext_resource type="Texture2D" uid="uid://cphw5e8un13t" path="res://Assets/Tilesets/Floooooor color shifted.png" id="1_skse0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2iwa"]
-size = Vector2(48, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7up8p"]
-size = Vector2(48, 32)
+[ext_resource type="Texture2D" uid="uid://cfgp0npeg6al6" path="res://Assets/Tilesets/Floooooor with wall.png" id="1_tk7ln"]
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_skse0")
+texture = ExtResource("1_tk7ln")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-144, -23, -144, -7, -96, -7, -96, -119, -48, -119, -48, -87, 32, -87, 32, -119, 96, -119, 96, 57, 112, 57, 112, -119, 224, -119, 224, 121, 112, 121, 112, 89, 96, 89, 96, 121, 16, 121, 16, 135, 240, 135, 240, -135, -240, -135, -240, 135, -16, 135, -16, 121, -224, 121, -224, -7, -176, -7, -176, -23, -224, -23, -224, -71, -176, -71, -176, -119, -112, -119, -112, -23)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(168, 9)
-shape = SubResource("RectangleShape2D_w2iwa")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(168, -71)
-shape = SubResource("RectangleShape2D_7up8p")
+visible = false
+position = Vector2(0, -7)
+polygon = PackedVector2Array(-144, -23, -144, -7, -96, -7, -16, -8, -16, -24, -96, -23.7981, -96, -119, -48, -119, -17, -119, 6, -119, 32, -119, 96, -119, 96, -24, 16, -24, 16, -8, 96, -8.15336, 96, 57, 112, 57, 112, -119, 224, -119, 224, 121, 112, 121, 112, 89, 96, 89, 96, 121, 16, 121, 16, 150, 240, 151, 240, -135, -240, -135, -240, 151, -16, 150, -16, 121, -224, 121, -224, -7, -176, -7, -176, -23, -224, -23, -224, -71, -224, -119, -176, -119, -112, -119, -112, -23)

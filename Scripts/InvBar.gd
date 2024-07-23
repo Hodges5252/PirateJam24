@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func update_bar():
@@ -20,7 +20,7 @@ func update_bar():
 	for items in Inventory.inv_disp:
 		var pic = inv_bar[x].find_child("pic", true)
 		var quant = inv_bar[x].find_child("quant")
-		pic.texture = ImageTexture.create_from_image(Inventory.inv_pics[items])
+		pic.texture = load(Inventory.inv_pics[items])
 		quant.text = str(Inventory.inv_disp[items])
 		if int(quant.text) >= 999:
 			quant.text = "999"
@@ -28,12 +28,12 @@ func update_bar():
 			quant.text = "0"
 		x += 1
 	for y in inv_bar:
-		var show : bool
+		var can_see : bool
 		var quant = y.find_child("quant")
 		var kids = y.get_children()
 		if int(quant.text) <= 0:
-			show = false
+			can_see = false
 		else:
-			show = true
+			can_see = true
 		for z in kids:
-			z.set_visible(show)
+			z.set_visible(can_see)

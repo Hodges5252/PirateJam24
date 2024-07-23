@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqctupx8lcwui"]
+
+[ext_resource type="Script" path="res://Scripts/collectables.gd" id="1_3sjis"]
+[ext_resource type="Texture2D" uid="uid://cig60kikr7hhd" path="res://Assets/Sprites/Collectables/Rock 3 outline.png" id="2_w3x1l"]
+[ext_resource type="Texture2D" uid="uid://dhxxtn2dgx0c8" path="res://Assets/Sprites/Collectables/Rock 3.png" id="3_n1ous"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27tld"]
+atlas = ExtResource("2_w3x1l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmroi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27tld")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgvsw"]
+atlas = ExtResource("3_n1ous")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gffba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgvsw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nd5r"]
+size = Vector2(16, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8si1"]
+size = Vector2(16, 14)
+
+[node name="Rock" type="StaticBody2D"]
+script = ExtResource("1_3sjis")
+item = "Space Rock"
+
+[node name="Outline" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_kmroi")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_gffba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7.25)
+shape = SubResource("RectangleShape2D_8nd5r")
+
+[node name="hilight" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hilight"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_m8si1")
+
+[connection signal="area_entered" from="hilight" to="." method="_on_hilight_area_entered"]
+[connection signal="area_exited" from="hilight" to="." method="_on_hilight_area_exited"]

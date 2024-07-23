@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwvmd4ris585r"
-path="res://.godot/imported/Hit dead tree 1 outline.png-cd5a7393762fe27da7a7226939c9589a.ctex"
+uid="uid://bsg2eqr1ftjcr"
+path="res://.godot/imported/Hit tree 1 complicated and cut into a million pieces.png-2959334d36e12d186f9615fbcdbc954b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectables/Hit dead tree 1 outline.png"
-dest_files=["res://.godot/imported/Hit dead tree 1 outline.png-cd5a7393762fe27da7a7226939c9589a.ctex"]
+source_file="res://Assets/Sprites/Collectables/Hit tree 1 complicated and cut into a million pieces.png"
+dest_files=["res://.godot/imported/Hit tree 1 complicated and cut into a million pieces.png-2959334d36e12d186f9615fbcdbc954b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxoqsq53slc4x"
-path="res://.godot/imported/Dead tree 1.png-e221b77a27777ac85c35dcda4c66d799.ctex"
+uid="uid://cfgp0npeg6al6"
+path="res://.godot/imported/Floooooor with wall.png-72a9683e62f54ccd9f73fb06b0cd84d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectables/Dead tree 1.png"
-dest_files=["res://.godot/imported/Dead tree 1.png-e221b77a27777ac85c35dcda4c66d799.ctex"]
+source_file="res://Assets/Tilesets/Floooooor with wall.png"
+dest_files=["res://.godot/imported/Floooooor with wall.png-72a9683e62f54ccd9f73fb06b0cd84d3.ctex"]
 
 [params]
 

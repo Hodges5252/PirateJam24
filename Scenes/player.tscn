@@ -593,13 +593,14 @@ animations = [{
 radius = 21.0
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 131
+collision_mask = 131
 script = ExtResource("1_8avm5")
 
 [node name="HUD" parent="." instance=ExtResource("2_xprmu")]
 
 [node name="mouse" type="Area2D" parent="."]
+visible = false
 position = Vector2(30, -21)
 collision_layer = 4
 collision_mask = 4
@@ -616,6 +617,15 @@ offset_top = -4.0
 offset_right = 5.0
 offset_bottom = 4.0
 metadata/_edit_lock_ = true
+
+[node name="ShootPoint" type="Marker2D" parent="."]
+position = Vector2(-1, -17)
+
+[node name="ColorRect" type="ColorRect" parent="ShootPoint"]
+visible = false
+offset_right = 4.0
+offset_bottom = 3.0
+metadata/_edit_use_anchors_ = true
 
 [node name="whole" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -1031,15 +1041,13 @@ offset_bottom = 608.0
 color = Color(0.313726, 0.584314, 0, 1)
 
 [node name="MeleeRange" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeRange"]
-position = Vector2(-1, -29)
+position = Vector2(0, -29)
 shape = SubResource("CircleShape2D_egx21")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(7, -17)
 
 [connection signal="animation_finished" from="whole" to="." method="_on_whole_animation_finished"]
 [connection signal="animation_finished" from="top" to="." method="_on_top_animation_finished"]

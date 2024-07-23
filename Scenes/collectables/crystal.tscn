@@ -1,70 +1,62 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqkc2m0fuyhvp"]
+[gd_scene load_steps=13 format=3 uid="uid://bqrviw2t4y2bb"]
 
-[ext_resource type="Script" path="res://Scripts/collectables.gd" id="1_b7bk8"]
-[ext_resource type="Texture2D" uid="uid://kjqlh4kphs2x" path="res://Assets/Sprites/Collectables/Hit dead tree 1.png" id="2_6tsrx"]
-[ext_resource type="Texture2D" uid="uid://f5uumyvwy7ht" path="res://Assets/Sprites/Collectables/Rock 1 split.png" id="3_1n67q"]
+[ext_resource type="Script" path="res://Scripts/collectables.gd" id="1_1ta57"]
+[ext_resource type="Texture2D" uid="uid://ddqcv5cke5d22" path="res://Assets/Sprites/Collectables/Crystal 2 purple.png" id="2_1ujti"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hloba"]
-atlas = ExtResource("2_6tsrx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhy6w"]
+atlas = ExtResource("2_1ujti")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmroi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hloba")
+"texture": SubResource("AtlasTexture_bhy6w")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o8b5x"]
-atlas = ExtResource("2_6tsrx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1v7r"]
+atlas = ExtResource("2_1ujti")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_byefp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o8b5x")
+"texture": SubResource("AtlasTexture_g1v7r")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ygxbs"]
-atlas = ExtResource("2_6tsrx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7ven"]
+atlas = ExtResource("2_1ujti")
 region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oll0u"]
-atlas = ExtResource("3_1n67q")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n36fa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ygxbs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oll0u")
+"texture": SubResource("AtlasTexture_q7ven")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j2elp"]
-atlas = ExtResource("2_6tsrx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_njcfk"]
+atlas = ExtResource("2_1ujti")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gffba"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j2elp")
+"texture": SubResource("AtlasTexture_njcfk")
 }],
 "loop": true,
 "name": &"default",
@@ -72,37 +64,34 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nd5r"]
-size = Vector2(5, 16.5)
+size = Vector2(18, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8si1"]
-size = Vector2(27, 30)
+size = Vector2(31, 31)
 
-[node name="Tree" type="StaticBody2D"]
-script = ExtResource("1_b7bk8")
+[node name="Crystal_p" type="StaticBody2D"]
+script = ExtResource("1_1ta57")
 double = true
+item = "Space Crystal"
 
 [node name="OutlineBot" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(1, -16)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_kmroi")
 
 [node name="OutlineTop" type="AnimatedSprite2D" parent="."]
-visible = false
-z_index = 2
-position = Vector2(1, -16)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_byefp")
 
-[node name="TreeTop" type="AnimatedSprite2D" parent="."]
-z_index = 2
-position = Vector2(1, -16)
+[node name="Top" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_n36fa")
 
-[node name="TreeBottom" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -16)
+[node name="Bottom" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_gffba")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, -8.75)
+position = Vector2(-1, -15.5)
 shape = SubResource("RectangleShape2D_8nd5r")
 
 [node name="hilight" type="Area2D" parent="."]
@@ -110,7 +99,7 @@ collision_layer = 6
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hilight"]
-position = Vector2(-0.5, -15)
+position = Vector2(-0.5, -15.5)
 shape = SubResource("RectangleShape2D_m8si1")
 
 [connection signal="area_entered" from="hilight" to="." method="_on_hilight_area_entered"]

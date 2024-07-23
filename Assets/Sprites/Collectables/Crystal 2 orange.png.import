@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpkhtltea7ng1"
-path="res://.godot/imported/Hit tree 1 outline.png-f6cf3d040fa5dc257445414025384fdd.ctex"
+uid="uid://dkn8jv87a0h5k"
+path="res://.godot/imported/Crystal 2 orange.png-f3edad445c205d9018b26ae034721aa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectables/Hit tree 1 outline.png"
-dest_files=["res://.godot/imported/Hit tree 1 outline.png-f6cf3d040fa5dc257445414025384fdd.ctex"]
+source_file="res://Assets/Sprites/Collectables/Crystal 2 orange.png"
+dest_files=["res://.godot/imported/Crystal 2 orange.png-f3edad445c205d9018b26ae034721aa7.ctex"]
 
 [params]
 

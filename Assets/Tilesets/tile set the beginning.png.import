@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhxxtn2dgx0c8"
-path="res://.godot/imported/Rock 3.png-bff3644a0fcb229b53fb82d0fcc3abef.ctex"
+uid="uid://bbrfpguenffnk"
+path="res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectables/Rock 3.png"
-dest_files=["res://.godot/imported/Rock 3.png-bff3644a0fcb229b53fb82d0fcc3abef.ctex"]
+source_file="res://Assets/Tilesets/tile set the beginning.png"
+dest_files=["res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"]
 
 [params]
 

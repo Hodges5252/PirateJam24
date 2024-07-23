@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxaq51fp2ths7"]
+
+[ext_resource type="Texture2D" uid="uid://crgfmjwovxfyr" path="res://Assets/Tilesets/Crafter highlighter.png" id="1_rguhg"]
+[ext_resource type="Texture2D" uid="uid://dbj4yvqmj8um8" path="res://Assets/Tilesets/Crafter.png" id="2_78thf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huyhf"]
+size = Vector2(46, 29)
+
+[node name="Crafter" type="StaticBody2D"]
+
+[node name="Outline" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -16)
+texture = ExtResource("1_rguhg")
+
+[node name="Main" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_78thf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14.5)
+shape = SubResource("RectangleShape2D_huyhf")

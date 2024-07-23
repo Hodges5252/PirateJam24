@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nnuwsgih5i60"
-path="res://.godot/imported/Tree 1.png-90f45bcb6c17bee153d769328dbf2d30.ctex"
+uid="uid://ddqcv5cke5d22"
+path="res://.godot/imported/Crystal 2 purple.png-472fd7a52b1003a04f809b6a0ded081f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectables/Tree 1.png"
-dest_files=["res://.godot/imported/Tree 1.png-90f45bcb6c17bee153d769328dbf2d30.ctex"]
+source_file="res://Assets/Sprites/Collectables/Crystal 2 purple.png"
+dest_files=["res://.godot/imported/Crystal 2 purple.png-472fd7a52b1003a04f809b6a0ded081f.ctex"]
 
 [params]
 

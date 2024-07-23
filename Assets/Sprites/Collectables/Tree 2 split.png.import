@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3tv8camsedmx"
-path="res://.godot/imported/Rock 1.png-fcd99c2c61b4fe0b4880197459210fc1.ctex"
+uid="uid://d288xmkefxo4v"
+path="res://.godot/imported/Tree 2 split.png-d06a60b2c61219b9e4959d6bc2510438.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectables/Rock 1.png"
-dest_files=["res://.godot/imported/Rock 1.png-fcd99c2c61b4fe0b4880197459210fc1.ctex"]
+source_file="res://Assets/Sprites/Collectables/Tree 2 split.png"
+dest_files=["res://.godot/imported/Tree 2 split.png-d06a60b2c61219b9e4959d6bc2510438.ctex"]
 
 [params]
 

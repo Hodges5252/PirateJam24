@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp3ycvh7g0ydh"]
+
+[ext_resource type="Texture2D" uid="uid://dex1svhhhcbuu" path="res://Assets/Tilesets/Drill V1 outline.png" id="1_42xna"]
+[ext_resource type="Texture2D" uid="uid://u1vl6muv0q30" path="res://Assets/Tilesets/Drill V1.png" id="2_hen6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huyhf"]
+size = Vector2(48, 32)
+
+[node name="Drill" type="StaticBody2D"]
+
+[node name="Outline" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -16)
+texture = ExtResource("1_42xna")
+
+[node name="Main" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_hen6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_huyhf")

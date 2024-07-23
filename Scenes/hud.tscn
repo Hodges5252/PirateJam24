@@ -49,7 +49,7 @@ expand_mode = 5
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-size_flags_stretch_ratio = 3.58
+size_flags_stretch_ratio = 4.0
 script = ExtResource("1_ivc74")
 
 [node name="inv0" type="TextureRect" parent="Control/HBoxContainer/InvBar"]

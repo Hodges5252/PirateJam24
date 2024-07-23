@@ -15,24 +15,27 @@ var inventory = {
 	"Space Spiders"   : 0,
 	"Alien Bone"      : 0,
 	"Alien Brain"     : 0,
-	"Alien Blood"     : 0
+	"Alien Blood"     : 0,
+	"Alien Dung"      : 0
 }
 
+var placeholder = "res://Assets/UI/Icons/Poop.png"
+
 var inv_pics = {
-	"Space Rock"      : Image.load_from_file("res://Assets/UI/Icons/Rock collect.png"),
-	"Space Wood"      : Image.load_from_file("res://Assets/UI/Icons/Wood.png"),
-	"Alien Parts"     : Image.load_from_file("res://Assets/UI/Icons/Poop.png"),
-	"Repair Component": Image.load_from_file("res://Assets/UI/Icons/Poop.png"),
-	"Empty Cell"      : Image.load_from_file("res://Assets/UI/Icons/Poop.png"),
-	"Space Crystal"   : Image.load_from_file("res://Assets/UI/Icons/Poop.png"),
-	"Space Ore"       : Image.load_from_file("res://Assets/UI/Icons/Poop.png"),
-	"Space Oil"       : Image.load_from_file("res://Assets/UI/Icons/Poop.png"),
-	"Space Flower"    : Image.load_from_file("res://Assets/UI/Icons/Poop.png"),
-	"Space Spiders"   : Image.load_from_file("res://Assets/UI/Icons/Poop.png"),
-	"Alien Bone"      : Image.load_from_file("res://Assets/UI/Icons/Bone.png"),
-	"Alien Brain"     : Image.load_from_file("res://Assets/UI/Icons/Brain.png"),
-	"Alien Blood"     : Image.load_from_file("res://Assets/UI/Icons/Blood.png"),
-	"Alien Dung"      : Image.load_from_file("res://Assets/UI/Icons/Poop.png")
+	"Space Rock"      : "res://Assets/UI/Icons/Rock collect.png",
+	"Space Wood"      : "res://Assets/UI/Icons/Wood.png",
+	"Alien Parts"     : "res://Assets/UI/Icons/Monster parts.png",
+	"Repair Component": placeholder,
+	"Empty Cell"      : "res://Assets/UI/Icons/Floppy disk.png",
+	"Space Crystal"   : "res://Assets/UI/Icons/Collect crystal purple.png",
+	"Space Ore"       : "res://Assets/UI/Icons/Ore.png",
+	"Space Oil"       : "res://Assets/UI/Icons/Oil can.png",
+	"Space Flower"    : placeholder,
+	"Space Spiders"   : placeholder,
+	"Alien Bone"      : "res://Assets/UI/Icons/Bone.png",
+	"Alien Brain"     : "res://Assets/UI/Icons/Brain.png",
+	"Alien Blood"     : "res://Assets/UI/Icons/Blood.png",
+	"Alien Dung"      : "res://Assets/UI/Icons/Poop.png"
 }
 
 var inv_disp = {}
@@ -52,7 +55,7 @@ func update_inv():
 	updated.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func add_items(type, quantity):

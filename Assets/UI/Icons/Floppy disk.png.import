@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3oos30ikcgoi"
-path="res://.godot/imported/Dead tree 2.png-3a2a3bd5c921d6e4180825262840119f.ctex"
+uid="uid://bfsrweio1n86j"
+path="res://.godot/imported/Floppy disk.png-8913c96bcd5af5e706870873ff32dbe2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Collectables/Dead tree 2.png"
-dest_files=["res://.godot/imported/Dead tree 2.png-3a2a3bd5c921d6e4180825262840119f.ctex"]
+source_file="res://Assets/UI/Icons/Floppy disk.png"
+dest_files=["res://.godot/imported/Floppy disk.png-8913c96bcd5af5e706870873ff32dbe2.ctex"]
 
 [params]
 
