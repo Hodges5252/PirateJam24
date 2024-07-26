@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cul1ejei1o74p"
-path="res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"
+uid="uid://c36p0w444xgpc"
+path="res://.godot/imported/Bat all the stuffs.png-9aebbec37f4816b397d420dd408732fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/tile set the beginning.png"
-dest_files=["res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"]
+source_file="res://Assets/Sprites/NPC/Enemies/Bat all the stuffs.png"
+dest_files=["res://.godot/imported/Bat all the stuffs.png-9aebbec37f4816b397d420dd408732fa.ctex"]
 
 [params]
 

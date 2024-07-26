@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cul1ejei1o74p"
-path="res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"
+uid="uid://nilxvmypmu10"
+path="res://.godot/imported/Ore rock.png-d26da102292f71b18c99bd3f42be8d16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/tile set the beginning.png"
-dest_files=["res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"]
+source_file="res://Assets/Sprites/Collectables/Ore rock.png"
+dest_files=["res://.godot/imported/Ore rock.png-d26da102292f71b18c99bd3f42be8d16.ctex"]
 
 [params]
 

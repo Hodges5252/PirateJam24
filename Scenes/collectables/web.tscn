@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6alxhr57ow0a"]
+
+[ext_resource type="Script" path="res://Scripts/collectables.gd" id="1_7n7r0"]
+[ext_resource type="Texture2D" uid="uid://cdkt2adjwo6k1" path="res://Assets/Sprites/NPC/Enemies/Spooky web.png" id="2_at7pa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh6i4"]
+atlas = ExtResource("2_at7pa")
+region = Rect2(66, 0, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmroi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh6i4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35nik"]
+atlas = ExtResource("2_at7pa")
+region = Rect2(0, 0, 66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gffba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35nik")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nd5r"]
+size = Vector2(65, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8si1"]
+size = Vector2(65, 66)
+
+[node name="web" type="StaticBody2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_7n7r0")
+item = "Space Spiders"
+
+[node name="Outline" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -33)
+sprite_frames = SubResource("SpriteFrames_kmroi")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -33)
+sprite_frames = SubResource("SpriteFrames_gffba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -33)
+shape = SubResource("RectangleShape2D_8nd5r")
+
+[node name="hilight" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hilight"]
+position = Vector2(0.5, -33)
+shape = SubResource("RectangleShape2D_m8si1")
+
+[connection signal="area_entered" from="hilight" to="." method="_on_hilight_area_entered"]
+[connection signal="area_exited" from="hilight" to="." method="_on_hilight_area_exited"]

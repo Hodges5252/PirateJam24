@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cul1ejei1o74p"
-path="res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"
+uid="uid://6xkct22fkt52"
+path="res://.godot/imported/Battery item orange.png-195b600d32dc5accf0f24dfc90ea18c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/tile set the beginning.png"
-dest_files=["res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"]
+source_file="res://Assets/UI/Icons/Battery item orange.png"
+dest_files=["res://.godot/imported/Battery item orange.png-195b600d32dc5accf0f24dfc90ea18c7.ctex"]
 
 [params]
 

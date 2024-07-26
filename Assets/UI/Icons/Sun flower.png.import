@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cul1ejei1o74p"
-path="res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"
+uid="uid://diu100iq5odo1"
+path="res://.godot/imported/Sun flower.png-e0bcaf8f4f6b69bf8323a33675631c98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/tile set the beginning.png"
-dest_files=["res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"]
+source_file="res://Assets/UI/Icons/Sun flower.png"
+dest_files=["res://.godot/imported/Sun flower.png-e0bcaf8f4f6b69bf8323a33675631c98.ctex"]
 
 [params]
 

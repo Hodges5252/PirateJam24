@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cul1ejei1o74p"
-path="res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"
+uid="uid://diha4qq5ac65p"
+path="res://.godot/imported/Big flower.png-b10d614d2a19842f79d3e5fee0d85215.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/tile set the beginning.png"
-dest_files=["res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"]
+source_file="res://Assets/Sprites/Collectables/Big flower.png"
+dest_files=["res://.godot/imported/Big flower.png-b10d614d2a19842f79d3e5fee0d85215.ctex"]
 
 [params]
 

@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://de4wlopg2hdeu"]
+
+[ext_resource type="Script" path="res://Scripts/collectables.gd" id="1_swmjp"]
+[ext_resource type="Texture2D" uid="uid://bsg2eqr1ftjcr" path="res://Assets/Sprites/Collectables/Hit tree 1 complicated and cut into a million pieces.png" id="2_e2wcp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efvgc"]
+atlas = ExtResource("2_e2wcp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmroi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efvgc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tagya"]
+atlas = ExtResource("2_e2wcp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_byefp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tagya")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybicu"]
+atlas = ExtResource("2_e2wcp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n36fa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybicu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ub3v"]
+atlas = ExtResource("2_e2wcp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gffba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ub3v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nd5r"]
+size = Vector2(5, 16.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8si1"]
+size = Vector2(27, 30)
+
+[node name="Tree" type="StaticBody2D"]
+script = ExtResource("1_swmjp")
+double = true
+
+[node name="OutlineBot" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_kmroi")
+
+[node name="OutlineTop" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_byefp")
+
+[node name="TreeTop" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_n36fa")
+
+[node name="TreeBottom" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_gffba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -8.75)
+shape = SubResource("RectangleShape2D_8nd5r")
+
+[node name="hilight" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hilight"]
+position = Vector2(-0.5, -15)
+shape = SubResource("RectangleShape2D_m8si1")
+
+[connection signal="area_entered" from="hilight" to="." method="_on_hilight_area_entered"]
+[connection signal="area_exited" from="hilight" to="." method="_on_hilight_area_exited"]

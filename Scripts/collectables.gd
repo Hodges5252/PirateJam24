@@ -4,13 +4,29 @@ extends StaticBody2D
 @export var item = "Space Wood"
 @export var quantity = 1
 @export var health = 3
+@export var color_change : bool
 
 var body_count = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if color_change:
+		var color_check = randi_range(1,5)
+		var color = ""
+		match color_check:
+			1:
+				color = "purple"
+			2:
+				color = "blue"
+			3:
+				color = "green"
+			4:
+				color = "orange"
+			5:
+				color = "yellow"
+		$Top.play(color)
+		$Bottom.play(color)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

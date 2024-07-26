@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 100
 @export var can_attack = true
+
 var can_move = true
 var melee = false
 var playing = false
@@ -63,6 +64,8 @@ func melee_attack():
 			var parent = areas.get_parent()
 			if parent.has_method("break_col"):
 				parent.break_col()
+			if parent.has_method("take_damage"):
+				parent.take_damage(34)
 
 
 func shoot():

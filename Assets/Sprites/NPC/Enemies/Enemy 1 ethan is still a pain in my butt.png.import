@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cul1ejei1o74p"
-path="res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"
+uid="uid://yhw0i60ra61u"
+path="res://.godot/imported/Enemy 1 ethan is still a pain in my butt.png-04128df2fee9a8f8effadcd5e6a48e63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/tile set the beginning.png"
-dest_files=["res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"]
+source_file="res://Assets/Sprites/NPC/Enemies/Enemy 1 ethan is still a pain in my butt.png"
+dest_files=["res://.godot/imported/Enemy 1 ethan is still a pain in my butt.png-04128df2fee9a8f8effadcd5e6a48e63.ctex"]
 
 [params]
 

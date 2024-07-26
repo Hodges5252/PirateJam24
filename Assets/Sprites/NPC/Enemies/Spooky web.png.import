@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cul1ejei1o74p"
-path="res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"
+uid="uid://cdkt2adjwo6k1"
+path="res://.godot/imported/Spooky web.png-5926dce2f289c9ab88de7db0f4725608.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/tile set the beginning.png"
-dest_files=["res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"]
+source_file="res://Assets/Sprites/NPC/Enemies/Spooky web.png"
+dest_files=["res://.godot/imported/Spooky web.png-5926dce2f289c9ab88de7db0f4725608.ctex"]
 
 [params]
 

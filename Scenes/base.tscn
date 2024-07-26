@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bkyjn37rbc7hs" path="res://Scenes/player.tscn" id="1_4681p"]
 [ext_resource type="Script" path="res://Scripts/base.gd" id="1_sur2h"]
-[ext_resource type="Texture2D" uid="uid://bbrfpguenffnk" path="res://Assets/Tilesets/tile set the beginning.png" id="2_3colq"]
+[ext_resource type="Texture2D" uid="uid://cul1ejei1o74p" path="res://Assets/Tilesets/tile set the beginning.png" id="2_3colq"]
 [ext_resource type="PackedScene" uid="uid://dmkgdc6vx2vpt" path="res://Scenes/base_map.tscn" id="2_gji64"]
 [ext_resource type="PackedScene" uid="uid://bp3ycvh7g0ydh" path="res://Scenes/Machines/drill_m.tscn" id="3_aom0p"]
 [ext_resource type="PackedScene" uid="uid://qbbbueplcag4" path="res://Scenes/Machines/cell_m.tscn" id="3_awuuc"]
@@ -587,7 +587,7 @@ offset_bottom = 77.0
 text = "Close"
 
 [node name="CellM" parent="." instance=ExtResource("3_awuuc")]
-position = Vector2(-10, -224)
+position = Vector2(-10, -231)
 
 [node name="CellConverter" type="Area2D" parent="CellM"]
 position = Vector2(10, 217)

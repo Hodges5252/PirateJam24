@@ -590,11 +590,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_egx21"]
-radius = 21.0
+radius = 24.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 131
 collision_mask = 131
+platform_floor_layers = 0
 script = ExtResource("1_8avm5")
 
 [node name="HUD" parent="." instance=ExtResource("2_xprmu")]
@@ -1041,7 +1042,6 @@ offset_bottom = 608.0
 color = Color(0.313726, 0.584314, 0, 1)
 
 [node name="MeleeRange" type="Area2D" parent="."]
-visible = false
 collision_layer = 4
 collision_mask = 4
 

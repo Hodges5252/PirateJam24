@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cul1ejei1o74p"
-path="res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"
+uid="uid://cghwpccjgp224"
+path="res://.godot/imported/Dead tree 2.png-3a2a3bd5c921d6e4180825262840119f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/tile set the beginning.png"
-dest_files=["res://.godot/imported/tile set the beginning.png-20004a73bca22d29d6f3ab777013b186.ctex"]
+source_file="res://Assets/Sprites/Collectables/Dead tree 2.png"
+dest_files=["res://.godot/imported/Dead tree 2.png-3a2a3bd5c921d6e4180825262840119f.ctex"]
 
 [params]
 

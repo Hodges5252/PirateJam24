@@ -1,36 +1,36 @@
-[gd_scene load_steps=25 format=3 uid="uid://bqrviw2t4y2bb"]
+[gd_scene load_steps=25 format=3 uid="uid://yt7miu6hgq24"]
 
-[ext_resource type="Script" path="res://Scripts/collectables.gd" id="1_1ta57"]
-[ext_resource type="Texture2D" uid="uid://ddqcv5cke5d22" path="res://Assets/Sprites/Collectables/Crystal 2 purple.png" id="2_1ujti"]
-[ext_resource type="Texture2D" uid="uid://dnexfqug68kbs" path="res://Assets/Sprites/Collectables/Crystal 2 blue.png" id="3_5cjke"]
-[ext_resource type="Texture2D" uid="uid://ctrxmgtxwmywk" path="res://Assets/Sprites/Collectables/Crystal 2 green.png" id="4_emkag"]
-[ext_resource type="Texture2D" uid="uid://dkn8jv87a0h5k" path="res://Assets/Sprites/Collectables/Crystal 2 orange.png" id="5_eipjc"]
-[ext_resource type="Texture2D" uid="uid://b8n32cp1pj0ay" path="res://Assets/Sprites/Collectables/Crystal 2 pee pee.png" id="6_6ri8t"]
+[ext_resource type="Script" path="res://Scripts/collectables.gd" id="1_3fmb7"]
+[ext_resource type="Texture2D" uid="uid://diha4qq5ac65p" path="res://Assets/Sprites/Collectables/Big flower.png" id="2_46scm"]
+[ext_resource type="Texture2D" uid="uid://dnexfqug68kbs" path="res://Assets/Sprites/Collectables/Crystal 2 blue.png" id="3_15ff3"]
+[ext_resource type="Texture2D" uid="uid://ctrxmgtxwmywk" path="res://Assets/Sprites/Collectables/Crystal 2 green.png" id="4_2kmrf"]
+[ext_resource type="Texture2D" uid="uid://dkn8jv87a0h5k" path="res://Assets/Sprites/Collectables/Crystal 2 orange.png" id="5_53sma"]
+[ext_resource type="Texture2D" uid="uid://b8n32cp1pj0ay" path="res://Assets/Sprites/Collectables/Crystal 2 pee pee.png" id="6_lbimj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhy6w"]
-atlas = ExtResource("2_1ujti")
-region = Rect2(0, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgit4"]
+atlas = ExtResource("2_46scm")
+region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kmroi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bhy6w")
+"texture": SubResource("AtlasTexture_cgit4")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g1v7r"]
-atlas = ExtResource("2_1ujti")
-region = Rect2(32, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki18s"]
+atlas = ExtResource("2_46scm")
+region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_byefp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g1v7r")
+"texture": SubResource("AtlasTexture_ki18s")
 }],
 "loop": true,
 "name": &"default",
@@ -38,23 +38,23 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_00fya"]
-atlas = ExtResource("3_5cjke")
+atlas = ExtResource("3_15ff3")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gev3o"]
-atlas = ExtResource("4_emkag")
+atlas = ExtResource("4_2kmrf")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rh12i"]
-atlas = ExtResource("5_eipjc")
+atlas = ExtResource("5_53sma")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q7ven"]
-atlas = ExtResource("2_1ujti")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2h5r"]
+atlas = ExtResource("2_46scm")
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ag4aw"]
-atlas = ExtResource("6_6ri8t")
+atlas = ExtResource("6_lbimj")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n36fa"]
@@ -85,7 +85,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q7ven")
+"texture": SubResource("AtlasTexture_u2h5r")
 }],
 "loop": true,
 "name": &"purple",
@@ -101,23 +101,23 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lsgig"]
-atlas = ExtResource("3_5cjke")
+atlas = ExtResource("3_15ff3")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u2l1v"]
-atlas = ExtResource("4_emkag")
+atlas = ExtResource("4_2kmrf")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a32fr"]
-atlas = ExtResource("5_eipjc")
+atlas = ExtResource("5_53sma")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_njcfk"]
-atlas = ExtResource("2_1ujti")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5gjy"]
+atlas = ExtResource("2_46scm")
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3fwg"]
-atlas = ExtResource("6_6ri8t")
+atlas = ExtResource("6_lbimj")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gffba"]
@@ -148,7 +148,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_njcfk")
+"texture": SubResource("AtlasTexture_y5gjy")
 }],
 "loop": true,
 "name": &"purple",
@@ -164,37 +164,38 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nd5r"]
-size = Vector2(18, 31)
+size = Vector2(32.5, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8si1"]
-size = Vector2(31, 31)
+size = Vector2(32.5, 40)
 
-[node name="Crystal" type="StaticBody2D"]
-script = ExtResource("1_1ta57")
+[node name="Flower" type="StaticBody2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_3fmb7")
 double = true
-item = "Space Crystal"
-color_change = true
+item = "Space Flower"
 
 [node name="OutlineBot" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(-0.999999, -23.5)
 sprite_frames = SubResource("SpriteFrames_kmroi")
 
 [node name="OutlineTop" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(-0.999999, -23.5)
 sprite_frames = SubResource("SpriteFrames_byefp")
 
 [node name="Top" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(-0.999999, -23.5)
 sprite_frames = SubResource("SpriteFrames_n36fa")
 animation = &"purple"
 
 [node name="Bottom" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(-0.999999, -23.5)
 sprite_frames = SubResource("SpriteFrames_gffba")
 animation = &"purple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -15.5)
+position = Vector2(-1.25, -20)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8nd5r")
 
 [node name="hilight" type="Area2D" parent="."]
@@ -202,7 +203,8 @@ collision_layer = 6
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hilight"]
-position = Vector2(-0.5, -15.5)
+position = Vector2(-1.25, -20)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_m8si1")
 
 [connection signal="area_entered" from="hilight" to="." method="_on_hilight_area_entered"]
