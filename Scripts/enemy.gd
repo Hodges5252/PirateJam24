@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var health = 100
 @export var speed = 75
+@export var bird = false
 @export var item = "Alien Parts"
 @export var quantity = 1
 var body_count = 0
@@ -12,6 +13,8 @@ var dying = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if bird:
+		$top.visible = false
 	sync_play("idle")
 
 
@@ -47,8 +50,11 @@ func take_damage(damage):
 			speed = 0
 
 func sync_play(play):
-	$top.play(play)
-	$bot.play(play)
+	if bird and alive:
+		$bot.play(play)
+	else:
+		$top.play(play)
+		$bot.play(play)
 
 func flip_sprites(flip):
 	$top.flip_h = flip

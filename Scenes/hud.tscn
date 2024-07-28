@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbmoavcar0arr"]
+[gd_scene load_steps=14 format=3 uid="uid://dbmoavcar0arr"]
 
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_cvlrk"]
 [ext_resource type="Script" path="res://Scripts/InvBar.gd" id="1_ivc74"]
 [ext_resource type="Texture2D" uid="uid://ck67t4n0xvxkp" path="res://Assets/UI/Battery.png" id="1_kcico"]
 [ext_resource type="Texture2D" uid="uid://1t5ob6j1gskw" path="res://Assets/UI/Health bar.png" id="2_iihvg"]
@@ -7,7 +8,26 @@
 [ext_resource type="Texture2D" uid="uid://b34kj6xg1ern8" path="res://Assets/Sprites/Collectables/Tree 2.png" id="3_ko4c7"]
 [ext_resource type="Texture2D" uid="uid://cl6ao582e8ixe" path="res://Assets/UI/Radiation bar.png" id="3_met5v"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6yop"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rusms"]
+bg_color = Color(0.172549, 0.682353, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48srj"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqbpj"]
+bg_color = Color(0.726034, 0.00123999, 0.000679799, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni26r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nnbv"]
+bg_color = Color(0.988235, 1, 0, 1)
+
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_cvlrk")
 
 [node name="Control" type="MarginContainer" parent="."]
 anchors_preset = 12
@@ -31,6 +51,29 @@ layout_mode = 2
 texture = ExtResource("1_kcico")
 expand_mode = 3
 
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer/Cell"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Battery" type="ProgressBar" parent="Control/HBoxContainer/Cell/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_i6yop")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rusms")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
 [node name="Health" type="TextureRect" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -38,12 +81,54 @@ size_flags_vertical = 8
 texture = ExtResource("2_iihvg")
 expand_mode = 5
 
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer/Health"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 43
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="Health" type="ProgressBar" parent="Control/HBoxContainer/Health/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_48srj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gqbpj")
+value = 100.0
+show_percentage = false
+
 [node name="Rads" type="TextureRect" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 texture = ExtResource("3_met5v")
 expand_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer/Rads"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 43
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="Rads" type="ProgressBar" parent="Control/HBoxContainer/Rads/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_ni26r")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7nnbv")
+value = 100.0
+show_percentage = false
 
 [node name="InvBar" type="HBoxContainer" parent="Control/HBoxContainer"]
 layout_mode = 2
@@ -83,9 +168,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -93,6 +178,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv1" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -125,9 +211,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -135,6 +221,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv2" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -167,9 +254,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -177,6 +264,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv3" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -209,9 +297,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -219,6 +307,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv4" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -251,9 +340,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -261,6 +350,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv5" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -293,9 +383,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -303,6 +393,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv6" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -335,9 +426,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -345,6 +436,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv7" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -377,16 +469,17 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
-text = "0
+text = "000
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv8" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -419,9 +512,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -429,6 +522,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv9" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -461,9 +555,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -471,6 +565,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv10" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -503,9 +598,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -513,6 +608,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv11" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -545,9 +641,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -555,6 +651,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv12" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -587,9 +684,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -597,6 +694,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="inv13" type="TextureRect" parent="Control/HBoxContainer/InvBar"]
 layout_mode = 2
@@ -629,9 +727,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
+offset_left = -28.0
 offset_top = -15.0
-offset_right = 11.0
+offset_right = 20.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -639,6 +737,7 @@ scale = Vector2(0.5, 0.5)
 text = "0
 "
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer"]
 layout_mode = 2
@@ -655,4 +754,4 @@ text = "Inventory"
 
 [node name="Button2" type="Button" parent="Control/HBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "Settings"
+text = "Home"

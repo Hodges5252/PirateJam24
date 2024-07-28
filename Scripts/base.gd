@@ -10,7 +10,11 @@ var can_craft = false
 func _ready():
 	SceneTransition.get_node("black").color.a = 255
 	$CanvasLayer/Fade.play("fade_in")
+	
+	$CraM/Crafting/CraftingMenu.closed.connect(close_menu)
 
+func close_menu():
+	$Player.toggle_walk(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -25,7 +29,7 @@ func _process(_delta):
 			$Refiner/RefineMenu.set_visible(true)
 			$Player.toggle_walk(false)
 		if can_craft:
-			$Crafting/CraftingMenu.set_visible(true)
+			$CraM/Crafting/CraftingMenu.set_visible(true)
 			$Player.toggle_walk(false)
 
 

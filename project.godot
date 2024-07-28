@@ -23,6 +23,10 @@ SceneManager="*res://scene_manager.gd"
 
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom="res://Assets/Resources/game_theme.tres"
+
 [input]
 
 up={

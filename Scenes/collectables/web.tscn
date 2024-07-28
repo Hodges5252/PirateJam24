@@ -43,6 +43,7 @@ size = Vector2(65, 66)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_7n7r0")
 item = "Space Spiders"
+health = 1
 
 [node name="Outline" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -33)

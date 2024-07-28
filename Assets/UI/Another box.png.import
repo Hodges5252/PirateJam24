@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://30uqskv8878p"
-path="res://.godot/imported/Bat all the stuffs.png-9aebbec37f4816b397d420dd408732fa.ctex"
+uid="uid://nsy6syfjbo64"
+path="res://.godot/imported/Another box.png-b1160ddc86fec4edb1dd947e468080a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/NPC/Enemies/Bat all the stuffs.png"
-dest_files=["res://.godot/imported/Bat all the stuffs.png-9aebbec37f4816b397d420dd408732fa.ctex"]
+source_file="res://Assets/UI/Another box.png"
+dest_files=["res://.godot/imported/Another box.png-b1160ddc86fec4edb1dd947e468080a3.ctex"]
 
 [params]
 

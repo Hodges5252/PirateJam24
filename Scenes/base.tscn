@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bugyx4aun73x6"]
+[gd_scene load_steps=18 format=3 uid="uid://bugyx4aun73x6"]
 
 [ext_resource type="PackedScene" uid="uid://bkyjn37rbc7hs" path="res://Scenes/player.tscn" id="1_4681p"]
 [ext_resource type="Script" path="res://Scripts/base.gd" id="1_sur2h"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qbbbueplcag4" path="res://Scenes/Machines/cell_m.tscn" id="3_awuuc"]
 [ext_resource type="PackedScene" uid="uid://csghcju6ham41" path="res://Scenes/Machines/refiner_m.tscn" id="5_a6a28"]
 [ext_resource type="PackedScene" uid="uid://bxaq51fp2ths7" path="res://Scenes/Machines/craft_m.tscn" id="6_5mm8r"]
+[ext_resource type="PackedScene" uid="uid://b7l8fahccw3bg" path="res://Scenes/crafting_menu.tscn" id="8_odn1s"]
 [ext_resource type="PackedScene" uid="uid://c64p11aw4ohj1" path="res://Scenes/fade.tscn" id="9_bvtii"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f53yp"]
@@ -586,6 +587,31 @@ offset_right = 1100.0
 offset_bottom = 77.0
 text = "Close"
 
+[node name="PanelContainer" type="PanelContainer" parent="DrillM/DrillArea/Drill Menu"]
+offset_left = 85.0
+offset_top = 28.0
+offset_right = 1132.0
+offset_bottom = 556.0
+
+[node name="MarginContainer" type="MarginContainer" parent="DrillM/DrillArea/Drill Menu/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="VBoxContainer" parent="DrillM/DrillArea/Drill Menu/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Close crafting" type="Button" parent="DrillM/DrillArea/Drill Menu/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+text = "Close"
+
+[node name="Panel" type="Panel" parent="DrillM/DrillArea/Drill Menu/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
 [node name="CellM" parent="." instance=ExtResource("3_awuuc")]
 position = Vector2(-10, -231)
 
@@ -740,6 +766,31 @@ offset_right = 1060.9
 offset_bottom = 44.784
 text = "Close"
 
+[node name="PanelContainer" type="PanelContainer" parent="CellM/CellConverter/CellMenu"]
+offset_left = 85.0
+offset_top = 28.0
+offset_right = 1132.0
+offset_bottom = 556.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CellM/CellConverter/CellMenu/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CellM/CellConverter/CellMenu/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Close crafting" type="Button" parent="CellM/CellConverter/CellMenu/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+text = "Close"
+
+[node name="Panel" type="Panel" parent="CellM/CellConverter/CellMenu/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
 [node name="RefM" parent="." instance=ExtResource("5_a6a28")]
 position = Vector2(166, -192)
 
@@ -853,6 +904,31 @@ offset_right = 1097.0
 offset_bottom = 75.0
 text = "Close"
 
+[node name="PanelContainer" type="PanelContainer" parent="RefM/Refiner/RefineMenu"]
+offset_left = 85.0
+offset_top = 28.0
+offset_right = 1132.0
+offset_bottom = 556.0
+
+[node name="MarginContainer" type="MarginContainer" parent="RefM/Refiner/RefineMenu/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="VBoxContainer" parent="RefM/Refiner/RefineMenu/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Close crafting" type="Button" parent="RefM/Refiner/RefineMenu/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+text = "Close"
+
+[node name="Panel" type="Panel" parent="RefM/Refiner/RefineMenu/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
 [node name="CraM" parent="." instance=ExtResource("6_5mm8r")]
 position = Vector2(166, -112)
 
@@ -872,89 +948,7 @@ offset_top = -142.0
 offset_right = 191.0
 offset_bottom = -110.0
 
-[node name="CraftingMenu" type="CanvasLayer" parent="CraM/Crafting"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 87.0
-offset_top = 27.0
-offset_right = 1133.0
-offset_bottom = 556.0
-color = Color(0.617455, 0.617455, 0.617455, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 253.0
-offset_top = 68.0
-offset_right = 893.0
-offset_bottom = 174.0
-
-[node name="ColorRect3" type="ColorRect" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 261.0
-offset_top = 202.0
-offset_right = 901.0
-offset_bottom = 308.0
-
-[node name="ColorRect4" type="ColorRect" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 105.0
-offset_top = 326.0
-offset_right = 439.0
-offset_bottom = 540.0
-
-[node name="ColorRect5" type="ColorRect" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 726.0
-offset_top = 326.0
-offset_right = 1060.0
-offset_bottom = 540.0
-
-[node name="Label" type="Label" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 513.0
-offset_top = 111.0
-offset_right = 637.0
-offset_bottom = 134.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Craft Power Cell"
-
-[node name="Label2" type="Label" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 477.0
-offset_top = 241.0
-offset_right = 673.0
-offset_bottom = 264.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Craft Repair Components"
-
-[node name="Label3" type="Label" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 203.0
-offset_top = 417.0
-offset_right = 399.0
-offset_bottom = 440.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Using"
-
-[node name="Label4" type="Label" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 866.0
-offset_top = 426.0
-offset_right = 1062.0
-offset_bottom = 449.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Getting"
-
-[node name="Line2D" type="Line2D" parent="CraM/Crafting/CraftingMenu"]
-position = Vector2(23, -28)
-points = PackedVector2Array(301, 465, 439, 463, 694, 461, 647, 412, 639, 505, 694, 461)
-
-[node name="Button" type="Button" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 540.0
-offset_top = 515.0
-offset_right = 587.0
-offset_bottom = 546.0
-text = "Craft"
-
-[node name="Close crafting" type="Button" parent="CraM/Crafting/CraftingMenu"]
-offset_left = 1063.0
-offset_top = 39.0
-offset_right = 1113.0
-offset_bottom = 70.0
-text = "Close"
+[node name="CraftingMenu" parent="CraM/Crafting" instance=ExtResource("8_odn1s")]
 
 [node name="Player" parent="." instance=ExtResource("1_4681p")]
 can_attack = false
@@ -977,21 +971,53 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_uj3j0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Fade" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("9_bvtii")]
 scene_to_change = "res://Scenes/outside.tscn"
 player = NodePath("../../Player")
 
+[node name="BrokenMenu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="BrokenMenu"]
+offset_left = 85.0
+offset_top = 28.0
+offset_right = 1132.0
+offset_bottom = 556.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BrokenMenu/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="VBoxContainer" parent="BrokenMenu/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Close crafting" type="Button" parent="BrokenMenu/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+text = "Close"
+
+[node name="Panel" type="Panel" parent="BrokenMenu/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
 [connection signal="body_entered" from="DrillM/DrillArea" to="." method="_on_drill_body_entered"]
 [connection signal="body_exited" from="DrillM/DrillArea" to="." method="_on_drill_body_exited"]
 [connection signal="pressed" from="DrillM/DrillArea/Drill Menu/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="DrillM/DrillArea/Drill Menu/PanelContainer/MarginContainer/HBoxContainer/Close crafting" to="." method="_on_close_crafting_pressed"]
 [connection signal="body_entered" from="CellM/CellConverter" to="." method="_on_cell_converter_body_entered"]
 [connection signal="body_exited" from="CellM/CellConverter" to="." method="_on_cell_converter_body_exited"]
 [connection signal="pressed" from="CellM/CellConverter/CellMenu/Button2" to="." method="_on_cell_close_pressed"]
+[connection signal="pressed" from="CellM/CellConverter/CellMenu/PanelContainer/MarginContainer/HBoxContainer/Close crafting" to="." method="_on_close_crafting_pressed"]
 [connection signal="body_entered" from="RefM/Refiner" to="." method="_on_refiner_body_entered"]
 [connection signal="body_exited" from="RefM/Refiner" to="." method="_on_refiner_body_exited"]
 [connection signal="pressed" from="RefM/Refiner/RefineMenu/Refine Close" to="." method="_on_refine_close_pressed"]
+[connection signal="pressed" from="RefM/Refiner/RefineMenu/PanelContainer/MarginContainer/HBoxContainer/Close crafting" to="." method="_on_close_crafting_pressed"]
 [connection signal="body_entered" from="CraM/Crafting" to="." method="_on_crafting_body_entered"]
 [connection signal="body_exited" from="CraM/Crafting" to="." method="_on_crafting_body_exited"]
-[connection signal="pressed" from="CraM/Crafting/CraftingMenu/Close crafting" to="." method="_on_close_crafting_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="BrokenMenu/PanelContainer/MarginContainer/HBoxContainer/Close crafting" to="." method="_on_close_crafting_pressed"]

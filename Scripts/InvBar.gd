@@ -17,11 +17,11 @@ func _process(_delta):
 
 func update_bar():
 	var x = 0
-	for items in Inventory.inv_disp:
+	for items in Inventory.inventory:
 		var pic = inv_bar[x].find_child("pic", true)
 		var quant = inv_bar[x].find_child("quant")
 		pic.texture = load(Inventory.inv_pics[items])
-		quant.text = str(Inventory.inv_disp[items])
+		quant.text = str(Inventory.inventory[items])
 		if int(quant.text) >= 999:
 			quant.text = "999"
 		elif int(quant.text) <= 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://crqlquu144ff0"]
+[gd_scene load_steps=20 format=3 uid="uid://crqlquu144ff0"]
 
 [ext_resource type="Script" path="res://Scripts/outside.gd" id="1_5lgvd"]
 [ext_resource type="PackedScene" uid="uid://bkyjn37rbc7hs" path="res://Scenes/player.tscn" id="2_wvsxa"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://yt7miu6hgq24" path="res://Scenes/collectables/flower.tscn" id="13_xevyc"]
 [ext_resource type="PackedScene" uid="uid://de4wlopg2hdeu" path="res://Scenes/collectables/outside_tree.tscn" id="14_eil4f"]
 [ext_resource type="PackedScene" uid="uid://5i8kdr8354tk" path="res://Scenes/monster2.tscn" id="15_2ti6i"]
+[ext_resource type="PackedScene" uid="uid://cphb57qbmkwuu" path="res://Scenes/monster3.tscn" id="16_odyn7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wo0u7"]
 texture = ExtResource("3_ed6w0")
@@ -1751,5 +1752,8 @@ position = Vector2(158, -328)
 
 [node name="Skeleton2" parent="." instance=ExtResource("15_2ti6i")]
 position = Vector2(413, -287)
+
+[node name="Moth" parent="." instance=ExtResource("16_odyn7")]
+position = Vector2(416, -224)
 
 [connection signal="body_entered" from="Transfer" to="." method="_on_area_2d_body_entered"]

@@ -162,9 +162,11 @@ func _on_whole_animation_finished():
 	playing = false
 
 
-func _on_melee_range_area_entered(_area):
-	melee = true
+func _on_melee_range_area_entered(area):
+	if area.get_parent().has_method("get_input"):
+		melee = true
 
 
-func _on_melee_range_area_exited(_area):
-	melee = false
+func _on_melee_range_area_exited(area):
+	if area.get_parent().has_method("get_input"):
+		melee = false
