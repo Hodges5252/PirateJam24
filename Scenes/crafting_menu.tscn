@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7l8fahccw3bg"]
 
-[ext_resource type="PackedScene" uid="uid://cxfiensbielkd" path="res://item_box.tscn" id="1_4m4wx"]
+[ext_resource type="PackedScene" uid="uid://cxfiensbielkd" path="res://Scenes/item_box.tscn" id="1_4m4wx"]
 [ext_resource type="Script" path="res://Scripts/crafting_menu.gd" id="1_ockwb"]
 [ext_resource type="Script" path="res://Scripts/val_manager.gd" id="2_52llj"]
 
@@ -194,7 +194,6 @@ script = ExtResource("2_52llj")
 
 [node name="item_box" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box2" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -204,14 +203,12 @@ layout_mode = 2
 
 [node name="item_box4" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box5" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box7" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box8" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -224,7 +221,6 @@ layout_mode = 2
 
 [node name="item_box10" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box11" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -234,14 +230,12 @@ layout_mode = 2
 
 [node name="item_box13" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box14" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box15" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box16" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -254,7 +248,6 @@ layout_mode = 2
 
 [node name="item_box19" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box20" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -264,14 +257,12 @@ layout_mode = 2
 
 [node name="item_box22" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box23" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box24" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box25" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -284,7 +275,6 @@ layout_mode = 2
 
 [node name="item_box28" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box29" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -294,14 +284,12 @@ layout_mode = 2
 
 [node name="item_box31" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box32" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box33" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box34" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -314,7 +302,6 @@ layout_mode = 2
 
 [node name="item_box37" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box38" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -324,14 +311,12 @@ layout_mode = 2
 
 [node name="item_box40" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box41" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box42" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box43" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -344,7 +329,6 @@ layout_mode = 2
 
 [node name="item_box46" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box47" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -354,14 +338,12 @@ layout_mode = 2
 
 [node name="item_box49" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box50" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box51" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box52" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/UsingGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -425,7 +407,6 @@ script = ExtResource("2_52llj")
 
 [node name="item_box" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box2" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -435,14 +416,12 @@ layout_mode = 2
 
 [node name="item_box4" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box5" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box7" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box8" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -455,7 +434,6 @@ layout_mode = 2
 
 [node name="item_box10" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box11" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -465,14 +443,12 @@ layout_mode = 2
 
 [node name="item_box13" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box14" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box15" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box16" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -485,7 +461,6 @@ layout_mode = 2
 
 [node name="item_box19" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box20" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -495,14 +470,12 @@ layout_mode = 2
 
 [node name="item_box22" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box23" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box24" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box25" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -515,7 +488,6 @@ layout_mode = 2
 
 [node name="item_box28" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box29" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -525,14 +497,12 @@ layout_mode = 2
 
 [node name="item_box31" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box32" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box33" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box34" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -545,7 +515,6 @@ layout_mode = 2
 
 [node name="item_box37" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box38" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -555,14 +524,12 @@ layout_mode = 2
 
 [node name="item_box40" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box41" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box42" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box43" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -575,7 +542,6 @@ layout_mode = 2
 
 [node name="item_box46" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box47" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
@@ -585,14 +551,12 @@ layout_mode = 2
 
 [node name="item_box49" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box50" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
 [node name="item_box51" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
-stretch_mode = 2
 
 [node name="item_box52" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2

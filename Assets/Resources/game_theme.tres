@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dpfut2jp7mwk4"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dpfut2jp7mwk4"]
 
 [ext_resource type="FontFile" uid="uid://cb8m14guvs5oi" path="res://Assets/Resources/PressStart2P-vaV7.ttf" id="1_ok3kl"]
 [ext_resource type="Texture2D" uid="uid://nsy6syfjbo64" path="res://Assets/UI/Another box.png" id="2_iwe1f"]
@@ -13,6 +13,13 @@ texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gg5f7"]
+texture = ExtResource("3_eb6jy")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cflgd"]
 texture = ExtResource("3_eb6jy")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
@@ -47,6 +54,8 @@ Button/constants/outline_size = 1
 Button/fonts/font = ExtResource("1_ok3kl")
 Button/styles/normal = SubResource("StyleBoxTexture_x8hg0")
 Button/styles/pressed = SubResource("StyleBoxTexture_gg5f7")
+ItemPanel/base_type = &"PanelContainer"
+ItemPanel/styles/panel = SubResource("StyleBoxTexture_cflgd")
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 2
 Label/fonts/font = ExtResource("1_ok3kl")

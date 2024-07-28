@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bugyx4aun73x6"]
+[gd_scene load_steps=19 format=3 uid="uid://bugyx4aun73x6"]
 
 [ext_resource type="PackedScene" uid="uid://bkyjn37rbc7hs" path="res://Scenes/player.tscn" id="1_4681p"]
 [ext_resource type="Script" path="res://Scripts/base.gd" id="1_sur2h"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qbbbueplcag4" path="res://Scenes/Machines/cell_m.tscn" id="3_awuuc"]
 [ext_resource type="PackedScene" uid="uid://csghcju6ham41" path="res://Scenes/Machines/refiner_m.tscn" id="5_a6a28"]
 [ext_resource type="PackedScene" uid="uid://bxaq51fp2ths7" path="res://Scenes/Machines/craft_m.tscn" id="6_5mm8r"]
+[ext_resource type="PackedScene" uid="uid://d1enn064so3cv" path="res://Scenes/refiner_menu.tscn" id="7_v6oo8"]
 [ext_resource type="PackedScene" uid="uid://b7l8fahccw3bg" path="res://Scenes/crafting_menu.tscn" id="8_odn1s"]
 [ext_resource type="PackedScene" uid="uid://c64p11aw4ohj1" path="res://Scenes/fade.tscn" id="9_bvtii"]
 
@@ -904,30 +905,8 @@ offset_right = 1097.0
 offset_bottom = 75.0
 text = "Close"
 
-[node name="PanelContainer" type="PanelContainer" parent="RefM/Refiner/RefineMenu"]
-offset_left = 85.0
-offset_top = 28.0
-offset_right = 1132.0
-offset_bottom = 556.0
-
-[node name="MarginContainer" type="MarginContainer" parent="RefM/Refiner/RefineMenu/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="VBoxContainer" parent="RefM/Refiner/RefineMenu/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Close crafting" type="Button" parent="RefM/Refiner/RefineMenu/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 0
-text = "Close"
-
-[node name="Panel" type="Panel" parent="RefM/Refiner/RefineMenu/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
+[node name="RefinerMenu" parent="RefM/Refiner/RefineMenu" instance=ExtResource("7_v6oo8")]
+visible = false
 
 [node name="CraM" parent="." instance=ExtResource("6_5mm8r")]
 position = Vector2(166, -112)
@@ -949,6 +928,7 @@ offset_right = 191.0
 offset_bottom = -110.0
 
 [node name="CraftingMenu" parent="CraM/Crafting" instance=ExtResource("8_odn1s")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_4681p")]
 can_attack = false
@@ -1016,7 +996,6 @@ layout_mode = 2
 [connection signal="body_entered" from="RefM/Refiner" to="." method="_on_refiner_body_entered"]
 [connection signal="body_exited" from="RefM/Refiner" to="." method="_on_refiner_body_exited"]
 [connection signal="pressed" from="RefM/Refiner/RefineMenu/Refine Close" to="." method="_on_refine_close_pressed"]
-[connection signal="pressed" from="RefM/Refiner/RefineMenu/PanelContainer/MarginContainer/HBoxContainer/Close crafting" to="." method="_on_close_crafting_pressed"]
 [connection signal="body_entered" from="CraM/Crafting" to="." method="_on_crafting_body_entered"]
 [connection signal="body_exited" from="CraM/Crafting" to="." method="_on_crafting_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

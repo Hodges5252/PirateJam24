@@ -1,4 +1,4 @@
-extends TextureRect
+extends PanelContainer
 
 @export var pic : String
 @export var quant : int = 0
@@ -6,13 +6,13 @@ extends TextureRect
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if pic != null:
-		$HBoxContainer/pic.texture = load(pic)
+		$pic.texture = load(pic)
 	else:
-		$HBoxContainer/pic.texture = load("res://Assets/UI/Icons/Battery item yellow.png")
+		$pic.texture = load("res://Assets/UI/Icons/Battery item yellow.png")
 	$quant.text = str(quant)
 
 func set_image(image):
-	$HBoxContainer/pic.texture = load(image)
+	$pic.texture = load(image)
 
 func set_text(value : int):
 	if value < 0:

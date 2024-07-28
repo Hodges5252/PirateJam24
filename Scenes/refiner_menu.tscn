@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1enn064so3cv"]
+
+[ext_resource type="Script" path="res://Scripts/refiner_menu.gd" id="1_gs1lw"]
+[ext_resource type="PackedScene" uid="uid://cxfiensbielkd" path="res://Scenes/item_box.tscn" id="1_lapx1"]
+
+[node name="RefinerMenu" type="CanvasLayer"]
+script = ExtResource("1_gs1lw")
+
+[node name="RefinerMenu" type="PanelContainer" parent="."]
+offset_left = 85.0
+offset_top = 28.0
+offset_right = 1132.0
+offset_bottom = 556.0
+
+[node name="MarginContainer" type="MarginContainer" parent="RefinerMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="VBoxContainer" parent="RefinerMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="VBoxContainer" parent="RefinerMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RefinerMenu/MarginContainer/HBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+text = "Crafting Menu"
+horizontal_alignment = 1
+
+[node name="Close" type="Button" parent="RefinerMenu/MarginContainer/HBoxContainer/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Close"
+
+[node name="MarginContainer" type="MarginContainer" parent="RefinerMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+
+[node name="PanelContainer" type="PanelContainer" parent="RefinerMenu/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"SecondaryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="RefinerMenu/MarginContainer/HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="item_box" parent="RefinerMenu/MarginContainer/HBoxContainer/MarginContainer/PanelContainer/MarginContainer" instance=ExtResource("1_lapx1")]
+layout_mode = 2
+size_flags_horizontal = 4
+pic = "res://Assets/UI/Icons/Monster parts.png"
+
+[node name="MarginContainer2" type="MarginContainer" parent="RefinerMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RefinerMenu/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Add" type="Button" parent="RefinerMenu/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Add Parts"
+
+[node name="PanelContainer" type="PanelContainer" parent="RefinerMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"SecondaryPanel"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RefinerMenu/MarginContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RefinerMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Convert" type="Button" parent="RefinerMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Convert Parts"
+
+[node name="Cancel" type="Button" parent="RefinerMenu/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Cancel"

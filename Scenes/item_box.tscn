@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxfiensbielkd"]
+
+[ext_resource type="Script" path="res://Scripts/item_box.gd" id="1_6joxk"]
+[ext_resource type="Texture2D" uid="uid://bghuoo4j5uqqh" path="res://Assets/UI/Icons/Poop.png" id="2_hgajo"]
+
+[node name="item_box" type="PanelContainer"]
+offset_right = 58.0
+offset_bottom = 55.0
+size_flags_horizontal = 3
+theme_type_variation = &"ItemPanel"
+script = ExtResource("1_6joxk")
+pic = "res://Assets/Sprites/Collectables/Tree 2.png"
+
+[node name="pic" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_hgajo")
+stretch_mode = 5
+
+[node name="quant" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "0
+"
+horizontal_alignment = 2

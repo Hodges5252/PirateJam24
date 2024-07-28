@@ -1,6 +1,6 @@
 extends CanvasLayer
-signal closed
 
+signal closed
 
 var crafting_objects = {
 	"Space Wood"    : 0,
@@ -15,41 +15,75 @@ var craft_results = {
 }
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	update_everything()
 	visible = false
+
 
 func update_everything():
 	update_results()
 	update_using()
 
+
 func clear_everything():
-	crafting_objects.clear()
-	craft_results.clear()
-	crafting_objects = {
-	"Space Wood"    : 0,
-	"Space Rock"    : 0,
-	"Space Crystal" : 0,
-	"Space Ore"     : 0
-	}
-	craft_results = {
-	"Empty Cell"       : 0,
-	"Repair Component" : 0
-	}
+	
+	for items in crafting_objects:
+		crafting_objects[items] = 0
+	
+	for items in craft_results:
+		craft_results[items] = 0
+	
 	update_everything()
+
 
 func add_items(type, quantity):
 	crafting_objects[type] += quantity
 
+
 func add_results(type, quantity):
 	craft_results[type] += quantity
+
 
 func remove_items(type, quantity):
 	crafting_objects[type] -= quantity
 
 func remove_results(type, quantity):
 	craft_results[type] -= quantity
+
+
+func transfer(from, to, item, quant):
+	
+	var obj
+	var from_inv
+	
+	match from:
+		"objects":
+			obj = true
+		"results":
+			obj = false
+		"inventory":
+			from_inv = true
+	match to:
+		"objects":
+			obj = true
+		"results":
+			obj = false
+		"inventory":
+			from_inv = false
+	
+	if from_inv:
+		Inventory.remove_items(item, quant)
+		if obj:
+			add_items(item, quant)
+		elif not obj:
+			add_results(item, quant)
+	elif not from_inv:
+		if obj:
+			remove_items(item, quant)
+		elif not obj:
+			remove_results(item, quant)
+		Inventory.add_items(item, quant)
+	
 
 
 func update_results():
@@ -68,6 +102,7 @@ func update_results():
 			can_see = true
 		y.set_visible(can_see)
 
+
 func update_using():
 	var x = 0
 	var grid_list = %UsingGrid.get_children()
@@ -84,49 +119,38 @@ func update_using():
 			can_see = true
 		y.set_visible(can_see)
 
+
 func _on_close_pressed():
+	_on_cancel_pressed()
 	visible = false
 	closed.emit()
+
 
 func _on_add_pc_pressed():
 	if Inventory.check_quantity("Space Ore", 5):
 		if Inventory.check_quantity("Space Crystal", 5):
-			add_items("Space Ore", 5)
-			Inventory.remove_items("Space Ore", 5)
-			add_items("Space Crystal", 5)
-			Inventory.remove_items("Space Crystal", 5)
+			transfer("inventory", "objects", "Space Ore", 5)
+			transfer("inventory", "objects", "Space Crystal", 5)
 			add_results("Empty Cell", 1)
-			print("Empty Cell Added!")
 			update_everything()
-		else:
-			print("Not enough Crystal!")
-	else:
-		print("Not enough Ore!")
+
 
 func _on_add_rc_pressed():
 	if Inventory.check_quantity("Space Wood", 10):
 		if Inventory.check_quantity("Space Rock", 10):
-			add_items("Space Wood", 10)
-			Inventory.remove_items("Space Wood", 10)
-			add_items("Space Rock", 10)
-			Inventory.remove_items("Space Rock", 10)
+			transfer("inventory", "objects", "Space Wood", 10)
+			transfer("inventory", "objects", "Space Rock", 10)
 			add_results("Repair Component", 1)
-			print("Repair Component Added!")
 			update_everything()
-		else:
-			print("Not enough Rock!")
-	else:
-		print("Not enough Wood!")
 
 
 func _on_craft_pressed():
 	for items in craft_results:
-		Inventory.add_items(items, craft_results[items])
-		remove_results(items, craft_results[items])
+		transfer("results", "inventory", items, craft_results[items])
 	clear_everything()
+
 
 func _on_cancel_pressed():
 	for items in crafting_objects:
-		Inventory.add_items(items, crafting_objects[items])
-		remove_items(items, crafting_objects[items])
+		transfer("objects", "inventory", items, crafting_objects[items])
 	clear_everything()
