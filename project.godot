@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 
 Inventory="*res://Scripts/Inventory.gd"
 SceneManager="*res://Scripts/scene_manager.gd"
+ValManager="*res://Scripts/val_manager.gd"
 
 [display]
 

@@ -12,21 +12,59 @@ func _ready():
 	$CanvasLayer/Fade.play("fade_in")
 	
 	$CraM/Crafting/CraftingMenu.closed.connect(close_menu)
+	$RefM/Refiner/RefinerMenu.closed.connect(close_menu)
+	$DrillM/DrillArea/DrillMenu.closed.connect(close_menu)
+	$CellM/CellConverter/CellMenu.closed.connect(close_menu)
+	$BrokenMenu.closed.connect(close_repair)
+	
+	if ValManager.repair_progress["Drill"]:
+		$DrillM/DrillArea/DrillMenu.set_oil(10)
 
 func close_menu():
 	$Player.toggle_walk(true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func close_repair():
+	if can_mine:
+		if ValManager.repair_progress["Drill"]:
+				$DrillM/DrillArea/DrillMenu.set_visible(true)
+		else:
+			$Player.toggle_walk(true)
+	if can_cell:
+		if ValManager.repair_progress["CellC"]:
+				$CellM/CellConverter/CellMenu.set_visible(true)
+		else:
+			$Player.toggle_walk(true)
+	if can_ref:
+		if ValManager.repair_progress["Refin"]:
+				$RefM/Refiner/RefinerMenu.set_visible(true)
+		else:
+			$Player.toggle_walk(true)
+
 func _process(_delta):
 	if Input.is_action_just_pressed("select"):
 		if can_mine:
-			$"Drill/Drill Menu".set_visible(true)
+			if ValManager.repair_progress["Drill"]:
+				$DrillM/DrillArea/DrillMenu.set_visible(true)
+			else:
+				$BrokenMenu.set_type("Drill")
+				$BrokenMenu.set_cost(1)
+				$BrokenMenu.set_visible(true)
 			$Player.toggle_walk(false)
 		if can_cell:
-			$CellConverter/CellMenu.set_visible(true)
+			if ValManager.repair_progress["CellC"]:
+				$CellM/CellConverter/CellMenu.set_visible(true)
+			else:
+				$BrokenMenu.set_type("CellC")
+				$BrokenMenu.set_cost(2)
+				$BrokenMenu.set_visible(true)
 			$Player.toggle_walk(false)
 		if can_ref:
-			$Refiner/RefineMenu.set_visible(true)
+			if ValManager.repair_progress["Refin"]:
+				$RefM/Refiner/RefinerMenu.set_visible(true)
+			else:
+				$BrokenMenu.set_type("Refin")
+				$BrokenMenu.set_cost(5)
+				$BrokenMenu.set_visible(true)
 			$Player.toggle_walk(false)
 		if can_craft:
 			$CraM/Crafting/CraftingMenu.set_visible(true)

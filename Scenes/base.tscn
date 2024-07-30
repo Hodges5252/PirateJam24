@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bugyx4aun73x6"]
+[gd_scene load_steps=22 format=3 uid="uid://bugyx4aun73x6"]
 
 [ext_resource type="PackedScene" uid="uid://bkyjn37rbc7hs" path="res://Scenes/player.tscn" id="1_4681p"]
 [ext_resource type="Script" path="res://Scripts/base.gd" id="1_sur2h"]
@@ -7,10 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://bp3ycvh7g0ydh" path="res://Scenes/Machines/drill_m.tscn" id="3_aom0p"]
 [ext_resource type="PackedScene" uid="uid://qbbbueplcag4" path="res://Scenes/Machines/cell_m.tscn" id="3_awuuc"]
 [ext_resource type="PackedScene" uid="uid://csghcju6ham41" path="res://Scenes/Machines/refiner_m.tscn" id="5_a6a28"]
+[ext_resource type="PackedScene" uid="uid://bragd8ffeucyi" path="res://Scenes/drill_menu.tscn" id="5_o0erb"]
 [ext_resource type="PackedScene" uid="uid://bxaq51fp2ths7" path="res://Scenes/Machines/craft_m.tscn" id="6_5mm8r"]
+[ext_resource type="PackedScene" uid="uid://qjt22w7720k" path="res://Scenes/cell_menu.tscn" id="7_hc84m"]
 [ext_resource type="PackedScene" uid="uid://d1enn064so3cv" path="res://Scenes/refiner_menu.tscn" id="7_v6oo8"]
 [ext_resource type="PackedScene" uid="uid://b7l8fahccw3bg" path="res://Scenes/crafting_menu.tscn" id="8_odn1s"]
 [ext_resource type="PackedScene" uid="uid://c64p11aw4ohj1" path="res://Scenes/fade.tscn" id="9_bvtii"]
+[ext_resource type="PackedScene" uid="uid://c3afkv4bmbwef" path="res://Scenes/broken_menu.tscn" id="13_cwcda"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f53yp"]
 texture = ExtResource("2_3colq")
@@ -510,108 +513,8 @@ collision_mask = 2
 position = Vector2(-167, -242)
 shape = SubResource("RectangleShape2D_os0pf")
 
-[node name="ColorRect" type="ColorRect" parent="DrillM/DrillArea"]
+[node name="DrillMenu" parent="DrillM/DrillArea" instance=ExtResource("5_o0erb")]
 visible = false
-offset_left = -224.0
-offset_top = -255.0
-offset_right = -178.0
-offset_bottom = -207.0
-
-[node name="Drill Menu" type="CanvasLayer" parent="DrillM/DrillArea"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 93.0
-offset_top = 38.0
-offset_right = 1110.0
-offset_bottom = 560.0
-color = Color(0.54099, 0.54099, 0.54099, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 500.0
-offset_top = 201.0
-offset_right = 652.0
-offset_bottom = 334.0
-
-[node name="Label" type="Label" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 533.0
-offset_top = 246.0
-offset_right = 621.0
-offset_bottom = 269.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Oil Amount"
-
-[node name="ColorRect3" type="ColorRect" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 108.0
-offset_top = 89.0
-offset_right = 206.0
-offset_bottom = 270.0
-
-[node name="Label2" type="Label" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 109.0
-offset_top = 107.0
-offset_right = 197.0
-offset_bottom = 156.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Battery
-Slot"
-horizontal_alignment = 1
-
-[node name="ColorRect4" type="ColorRect" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 938.0
-offset_top = 79.0
-offset_right = 1036.0
-offset_bottom = 260.0
-
-[node name="Label3" type="Label" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 942.0
-offset_top = 96.0
-offset_right = 1030.0
-offset_bottom = 145.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Battery
-Slot"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 543.0
-offset_top = 363.0
-offset_right = 604.0
-offset_bottom = 394.0
-text = "Collect
-"
-
-[node name="Button2" type="Button" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 1050.0
-offset_top = 46.0
-offset_right = 1100.0
-offset_bottom = 77.0
-text = "Close"
-
-[node name="PanelContainer" type="PanelContainer" parent="DrillM/DrillArea/Drill Menu"]
-offset_left = 85.0
-offset_top = 28.0
-offset_right = 1132.0
-offset_bottom = 556.0
-
-[node name="MarginContainer" type="MarginContainer" parent="DrillM/DrillArea/Drill Menu/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="VBoxContainer" parent="DrillM/DrillArea/Drill Menu/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Close crafting" type="Button" parent="DrillM/DrillArea/Drill Menu/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 0
-text = "Close"
-
-[node name="Panel" type="Panel" parent="DrillM/DrillArea/Drill Menu/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
 
 [node name="CellM" parent="." instance=ExtResource("3_awuuc")]
 position = Vector2(-10, -231)
@@ -625,172 +528,8 @@ collision_mask = 2
 position = Vector2(-10, -230.5)
 shape = SubResource("RectangleShape2D_nv4uc")
 
-[node name="ColorRect" type="ColorRect" parent="CellM/CellConverter"]
+[node name="CellMenu" parent="CellM/CellConverter" instance=ExtResource("7_hc84m")]
 visible = false
-offset_left = -49.0
-offset_top = -254.0
-offset_right = 30.0
-offset_bottom = -223.0
-
-[node name="CellMenu" type="CanvasLayer" parent="CellM/CellConverter"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CellM/CellConverter/CellMenu"]
-offset_left = 95.0
-offset_top = 24.0
-offset_right = 1109.0
-offset_bottom = 555.0
-color = Color(0.529067, 0.529067, 0.529067, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="CellM/CellConverter/CellMenu"]
-offset_left = 384.0
-offset_top = 63.0
-offset_right = 481.0
-offset_bottom = 158.0
-
-[node name="ColorRect5" type="ColorRect" parent="CellM/CellConverter/CellMenu"]
-offset_left = 846.0
-offset_top = 324.0
-offset_right = 943.0
-offset_bottom = 419.0
-
-[node name="ColorRect3" type="ColorRect" parent="CellM/CellConverter/CellMenu"]
-offset_left = 635.0
-offset_top = 65.0
-offset_right = 732.0
-offset_bottom = 160.0
-
-[node name="ColorRect4" type="ColorRect" parent="CellM/CellConverter/CellMenu"]
-offset_left = 123.0
-offset_top = 201.0
-offset_right = 426.0
-offset_bottom = 541.0
-
-[node name="ColorRect6" type="ColorRect" parent="CellM/CellConverter/CellMenu"]
-offset_left = 580.0
-offset_top = 236.0
-offset_right = 813.0
-offset_bottom = 527.0
-
-[node name="ColorRect7" type="ColorRect" parent="CellM/CellConverter/CellMenu"]
-offset_left = 955.0
-offset_top = 214.0
-offset_right = 1005.0
-offset_bottom = 515.0
-
-[node name="ColorRect8" type="ColorRect" parent="CellM/CellConverter/CellMenu"]
-offset_left = 1038.0
-offset_top = 217.0
-offset_right = 1084.0
-offset_bottom = 521.0
-
-[node name="Line2D" type="Line2D" parent="CellM/CellConverter/CellMenu"]
-points = PackedVector2Array(405, 390, 534, 390, 539, 218, 898, 216, 894, 386)
-
-[node name="Line2D2" type="Line2D" parent="CellM/CellConverter/CellMenu"]
-points = PackedVector2Array(449, 107, 566, 103, 681, 101, 564, 103, 536, 258)
-
-[node name="Label" type="Label" parent="CellM/CellConverter/CellMenu"]
-offset_left = 389.0
-offset_top = 89.0
-offset_right = 471.0
-offset_bottom = 112.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Power Cell"
-
-[node name="Label2" type="Label" parent="CellM/CellConverter/CellMenu"]
-offset_left = 667.0
-offset_top = 89.0
-offset_right = 749.0
-offset_bottom = 112.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "oil"
-
-[node name="Label3" type="Label" parent="CellM/CellConverter/CellMenu"]
-offset_left = 956.0
-offset_top = 523.0
-offset_right = 1038.0
-offset_bottom = 546.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Power"
-
-[node name="Label4" type="Label" parent="CellM/CellConverter/CellMenu"]
-offset_left = 1028.0
-offset_top = 526.0
-offset_right = 1110.0
-offset_bottom = 549.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Radiation"
-
-[node name="Label5" type="Label" parent="CellM/CellConverter/CellMenu"]
-offset_left = 852.0
-offset_top = 345.0
-offset_right = 934.0
-offset_bottom = 368.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Finished
-Cell"
-
-[node name="Label6" type="Label" parent="CellM/CellConverter/CellMenu"]
-offset_left = 661.0
-offset_top = 379.0
-offset_right = 743.0
-offset_bottom = 428.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Cell Properties"
-
-[node name="Label7" type="Label" parent="CellM/CellConverter/CellMenu"]
-offset_left = 201.0
-offset_top = 341.0
-offset_right = 354.0
-offset_bottom = 390.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Components to add"
-
-[node name="Button" type="Button" parent="CellM/CellConverter/CellMenu"]
-anchors_preset = -1
-anchor_right = 0.027
-anchor_bottom = 0.042
-offset_left = 444.0
-offset_top = 476.0
-offset_right = 475.896
-offset_bottom = 484.784
-text = "Fuze"
-
-[node name="Button2" type="Button" parent="CellM/CellConverter/CellMenu"]
-anchors_preset = -1
-anchor_right = 0.027
-anchor_bottom = 0.042
-offset_left = 1029.0
-offset_top = 36.0
-offset_right = 1060.9
-offset_bottom = 44.784
-text = "Close"
-
-[node name="PanelContainer" type="PanelContainer" parent="CellM/CellConverter/CellMenu"]
-offset_left = 85.0
-offset_top = 28.0
-offset_right = 1132.0
-offset_bottom = 556.0
-
-[node name="MarginContainer" type="MarginContainer" parent="CellM/CellConverter/CellMenu/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="VBoxContainer" parent="CellM/CellConverter/CellMenu/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Close crafting" type="Button" parent="CellM/CellConverter/CellMenu/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 0
-text = "Close"
-
-[node name="Panel" type="Panel" parent="CellM/CellConverter/CellMenu/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
 
 [node name="RefM" parent="." instance=ExtResource("5_a6a28")]
 position = Vector2(166, -192)
@@ -804,108 +543,7 @@ collision_mask = 2
 position = Vector2(166.5, -206)
 shape = SubResource("RectangleShape2D_topua")
 
-[node name="ColorRect" type="ColorRect" parent="RefM/Refiner"]
-visible = false
-offset_left = 142.0
-offset_top = -223.0
-offset_right = 190.0
-offset_bottom = -191.0
-
-[node name="RefineMenu" type="CanvasLayer" parent="RefM/Refiner"]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="RefM/Refiner/RefineMenu"]
-offset_left = 92.0
-offset_top = 27.0
-offset_right = 1118.0
-offset_bottom = 561.0
-color = Color(0.577008, 0.577008, 0.577008, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="RefM/Refiner/RefineMenu"]
-offset_left = 493.0
-offset_top = 113.0
-offset_right = 654.0
-offset_bottom = 244.0
-
-[node name="ColorRect6" type="ColorRect" parent="RefM/Refiner/RefineMenu"]
-offset_left = 148.0
-offset_top = 96.0
-offset_right = 252.0
-offset_bottom = 308.0
-
-[node name="ColorRect7" type="ColorRect" parent="RefM/Refiner/RefineMenu"]
-offset_left = 871.0
-offset_top = 90.0
-offset_right = 975.0
-offset_bottom = 302.0
-
-[node name="ColorRect3" type="ColorRect" parent="RefM/Refiner/RefineMenu"]
-offset_left = 490.0
-offset_top = 358.0
-offset_right = 651.0
-offset_bottom = 489.0
-
-[node name="ColorRect4" type="ColorRect" parent="RefM/Refiner/RefineMenu"]
-offset_left = 292.0
-offset_top = 353.0
-offset_right = 453.0
-offset_bottom = 484.0
-
-[node name="ColorRect5" type="ColorRect" parent="RefM/Refiner/RefineMenu"]
-offset_left = 699.0
-offset_top = 360.0
-offset_right = 860.0
-offset_bottom = 491.0
-
-[node name="Line2D" type="Line2D" parent="RefM/Refiner/RefineMenu"]
-points = PackedVector2Array(570, 195, 568, 352, 520, 314, 607, 314, 568, 352)
-
-[node name="Label" type="Label" parent="RefM/Refiner/RefineMenu"]
-offset_left = 512.0
-offset_top = 143.0
-offset_right = 632.0
-offset_bottom = 166.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Raw Alien Parts"
-
-[node name="Label2" type="Label" parent="RefM/Refiner/RefineMenu"]
-offset_left = 151.0
-offset_top = 169.0
-offset_right = 271.0
-offset_bottom = 192.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Battery Slot"
-
-[node name="Label3" type="Label" parent="RefM/Refiner/RefineMenu"]
-offset_left = 878.0
-offset_top = 160.0
-offset_right = 998.0
-offset_bottom = 183.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Battery Slot"
-
-[node name="Button" type="Button" parent="RefM/Refiner/RefineMenu"]
-offset_left = 532.0
-offset_top = 268.0
-offset_right = 600.0
-offset_bottom = 299.0
-text = "Process"
-
-[node name="Button2" type="Button" parent="RefM/Refiner/RefineMenu"]
-offset_left = 538.0
-offset_top = 516.0
-offset_right = 606.0
-offset_bottom = 547.0
-text = "Collect"
-
-[node name="Refine Close" type="Button" parent="RefM/Refiner/RefineMenu"]
-offset_left = 1029.0
-offset_top = 44.0
-offset_right = 1097.0
-offset_bottom = 75.0
-text = "Close"
-
-[node name="RefinerMenu" parent="RefM/Refiner/RefineMenu" instance=ExtResource("7_v6oo8")]
+[node name="RefinerMenu" parent="RefM/Refiner" instance=ExtResource("7_v6oo8")]
 visible = false
 
 [node name="CraM" parent="." instance=ExtResource("6_5mm8r")]
@@ -950,6 +588,9 @@ collision_mask = 128
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_uj3j0")
 
+[node name="BrokenMenu" parent="." instance=ExtResource("13_cwcda")]
+visible = false
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
 
@@ -957,46 +598,12 @@ visible = false
 scene_to_change = "res://Scenes/outside.tscn"
 player = NodePath("../../Player")
 
-[node name="BrokenMenu" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="PanelContainer" type="PanelContainer" parent="BrokenMenu"]
-offset_left = 85.0
-offset_top = 28.0
-offset_right = 1132.0
-offset_bottom = 556.0
-
-[node name="MarginContainer" type="MarginContainer" parent="BrokenMenu/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="VBoxContainer" parent="BrokenMenu/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Close crafting" type="Button" parent="BrokenMenu/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 0
-text = "Close"
-
-[node name="Panel" type="Panel" parent="BrokenMenu/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
 [connection signal="body_entered" from="DrillM/DrillArea" to="." method="_on_drill_body_entered"]
 [connection signal="body_exited" from="DrillM/DrillArea" to="." method="_on_drill_body_exited"]
-[connection signal="pressed" from="DrillM/DrillArea/Drill Menu/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="DrillM/DrillArea/Drill Menu/PanelContainer/MarginContainer/HBoxContainer/Close crafting" to="." method="_on_close_crafting_pressed"]
 [connection signal="body_entered" from="CellM/CellConverter" to="." method="_on_cell_converter_body_entered"]
 [connection signal="body_exited" from="CellM/CellConverter" to="." method="_on_cell_converter_body_exited"]
-[connection signal="pressed" from="CellM/CellConverter/CellMenu/Button2" to="." method="_on_cell_close_pressed"]
-[connection signal="pressed" from="CellM/CellConverter/CellMenu/PanelContainer/MarginContainer/HBoxContainer/Close crafting" to="." method="_on_close_crafting_pressed"]
 [connection signal="body_entered" from="RefM/Refiner" to="." method="_on_refiner_body_entered"]
 [connection signal="body_exited" from="RefM/Refiner" to="." method="_on_refiner_body_exited"]
-[connection signal="pressed" from="RefM/Refiner/RefineMenu/Refine Close" to="." method="_on_refine_close_pressed"]
 [connection signal="body_entered" from="CraM/Crafting" to="." method="_on_crafting_body_entered"]
 [connection signal="body_exited" from="CraM/Crafting" to="." method="_on_crafting_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="BrokenMenu/PanelContainer/MarginContainer/HBoxContainer/Close crafting" to="." method="_on_close_crafting_pressed"]

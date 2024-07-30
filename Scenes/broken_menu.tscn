@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3afkv4bmbwef"]
+
+[ext_resource type="Script" path="res://Scripts/broken_menu.gd" id="1_gdsry"]
+[ext_resource type="PackedScene" uid="uid://cxfiensbielkd" path="res://Scenes/item_box.tscn" id="2_cl82i"]
+
+[node name="BrokenMenu" type="CanvasLayer"]
+script = ExtResource("1_gdsry")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 85.0
+offset_top = 28.0
+offset_right = 1132.0
+offset_bottom = 556.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Device Broken
+"
+horizontal_alignment = 1
+
+[node name="Close" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+text = "Close"
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_type_variation = &"SecondaryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Required" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Components
+Needed:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Icon" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_cl82i")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+pic = "res://Assets/UI/Icons/Floppy disk.png"
+
+[node name="AddItems" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Add Item"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 43.55)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_bottom = 9
+
+[node name="Repair" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Repair"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Header/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/AddItems" to="." method="_on_add_items_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Repair" to="." method="_on_repair_pressed"]

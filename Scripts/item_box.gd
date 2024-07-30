@@ -2,6 +2,7 @@ extends PanelContainer
 
 @export var pic : String
 @export var quant : int = 0
+@export var item_type : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,3 +21,6 @@ func set_text(value : int):
 	elif value >= 999:
 		value = 999
 	$quant.text = str(value)
+
+func get_text():
+	return int($quant.text)

@@ -1,0 +1,514 @@
+[gd_scene load_steps=8 format=3 uid="uid://qjt22w7720k"]
+
+[ext_resource type="Script" path="res://Scripts/cell_menu.gd" id="1_qkxtk"]
+[ext_resource type="PackedScene" uid="uid://cxfiensbielkd" path="res://Scenes/item_box.tscn" id="1_u70so"]
+[ext_resource type="FontFile" uid="uid://cb8m14guvs5oi" path="res://Assets/Resources/PressStart2P-vaV7.ttf" id="2_gsrhp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7vd4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhab6"]
+bg_color = Color(0.172549, 0.682353, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4eptv"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geido"]
+bg_color = Color(0.988235, 1, 0, 1)
+
+[node name="CellMenu" type="CanvasLayer"]
+script = ExtResource("1_qkxtk")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 85.0
+offset_top = 42.0
+offset_right = 1132.0
+offset_bottom = 570.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Body" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="VBoxContainer" parent="PanelContainer/MarginContainer/Body"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Body/Header"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Cell Crafter"
+horizontal_alignment = 1
+
+[node name="Close" type="Button" parent="PanelContainer/MarginContainer/Body/Header"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+text = "Close"
+
+[node name="CellOil" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/Body/CellOil"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"SecondaryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="EmptyCell" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("1_u70so")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+pic = "res://Assets/UI/Icons/Battery item red.png"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AddCell" type="Button" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Add Cell"
+
+[node name="RemoveCell" type="Button" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Remove"
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/Body/CellOil"]
+layout_mode = 2
+theme_type_variation = &"SecondaryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="OilIcon" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer2/MarginContainer/HBoxContainer" instance=ExtResource("1_u70so")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+pic = "res://Assets/UI/Icons/Oil can.png"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AddOil" type="Button" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Add Oil"
+
+[node name="RemoveOil" type="Button" parent="PanelContainer/MarginContainer/Body/CellOil/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Remove"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/Body"]
+custom_minimum_size = Vector2(0, 13.61)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Body"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"SecondaryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Components"
+
+[node name="FlowerBox" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="FlowerBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/FlowerBox"]
+layout_mode = 2
+
+[node name="FlowerIcon" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/FlowerBox/FlowerBox" instance=ExtResource("1_u70so")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+pic = "res://Assets/UI/Icons/Sun flower.png"
+item_type = "Space Flower"
+
+[node name="AddFlower" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/FlowerBox/FlowerBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Add"
+
+[node name="RemoveFlower" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/FlowerBox/FlowerBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Remove"
+
+[node name="SpiderBox" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/SpiderBox"]
+layout_mode = 2
+
+[node name="SpiderIcon" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/SpiderBox/HBoxContainer" instance=ExtResource("1_u70so")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+pic = "res://Assets/UI/Icons/Ew gross item.png"
+item_type = "Space Spiders"
+
+[node name="AddSpider" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/SpiderBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Add"
+
+[node name="RemoveSpider" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/SpiderBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Remove"
+
+[node name="BoneBox" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BoneBox"]
+layout_mode = 2
+
+[node name="BoneIcon" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BoneBox/HBoxContainer" instance=ExtResource("1_u70so")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+pic = "res://Assets/UI/Icons/Bone.png"
+item_type = "Alien Bone"
+
+[node name="AddBone" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BoneBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Add"
+
+[node name="RemoveBone" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BoneBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Remove"
+
+[node name="BrainBox" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BrainBox"]
+layout_mode = 2
+
+[node name="BrainIcon" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BrainBox/HBoxContainer" instance=ExtResource("1_u70so")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+pic = "res://Assets/UI/Icons/Brain.png"
+item_type = "Alien Brain"
+
+[node name="AddBrain" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BrainBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Add"
+
+[node name="RemoveBrain" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BrainBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Remove"
+
+[node name="BloodBox" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BloodBox"]
+layout_mode = 2
+
+[node name="BloodIcon" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BloodBox/HBoxContainer" instance=ExtResource("1_u70so")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+pic = "res://Assets/UI/Icons/Blood.png"
+item_type = "Alien Blood"
+
+[node name="AddBlood" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BloodBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Add"
+
+[node name="RemoveBlood" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BloodBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Remove"
+
+[node name="DungBox" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/DungBox"]
+layout_mode = 2
+
+[node name="DungIcon" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/DungBox/HBoxContainer" instance=ExtResource("1_u70so")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+pic = "res://Assets/UI/Icons/Poop.png"
+item_type = "Alien Dung"
+
+[node name="AddDung" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/DungBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Add"
+
+[node name="RemoveDung" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/DungBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Remove"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SecondaryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Cell Abilities"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="AbilityList" type="RichTextLabel" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer2/MarginContainer/VBoxContainer2/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 6
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_gsrhp")
+theme_override_font_sizes/normal_font_size = 10
+text = "* Eat A chicken x2
+* Eat A chicken x2
+* Eat A chicken x2
+* Eat A chicken x2
+* Eat A chicken x2
+* Eat A chicken x2
+* Eat A chicken x2
+* Eat A chicken x2
+* Eat A chicken x2
+* Eat A chicken x2
+* Eat A chicken x2
+"
+autowrap_mode = 2
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Summary" type="HBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"SecondaryPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="CellIcon" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer/PanelContainer/MarginContainer" instance=ExtResource("1_u70so")]
+unique_name_in_owner = true
+layout_mode = 2
+pic = "res://Assets/UI/Icons/Battery item green.png"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12.575)
+layout_mode = 2
+
+[node name="CraftCell" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer"]
+layout_mode = 2
+text = "Craft"
+
+[node name="ClearCell" type="Button" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer"]
+layout_mode = 2
+text = "Clear"
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary"]
+custom_minimum_size = Vector2(7.975, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PowerBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_a7vd4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bhab6")
+fill_mode = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer2"]
+layout_mode = 2
+text = "Power"
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary"]
+custom_minimum_size = Vector2(9.015, 0)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RadBar" type="ProgressBar" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_4eptv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_geido")
+fill_mode = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer3"]
+layout_mode = 2
+text = "Rads"
+horizontal_alignment = 1
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/Header/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/CellOil/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/AddCell" to="." method="_on_add_cell_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/CellOil/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/RemoveCell" to="." method="_on_remove_cell_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/CellOil/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2/AddOil" to="." method="_on_add_oil_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/CellOil/PanelContainer2/MarginContainer/HBoxContainer/VBoxContainer2/RemoveOil" to="." method="_on_remove_oil_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/FlowerBox/FlowerBox/AddFlower" to="." method="_on_add_flower_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/FlowerBox/FlowerBox/RemoveFlower" to="." method="_on_remove_flower_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/SpiderBox/HBoxContainer/AddSpider" to="." method="_on_add_spider_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/SpiderBox/HBoxContainer/RemoveSpider" to="." method="_on_remove_spider_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BoneBox/HBoxContainer/AddBone" to="." method="_on_add_bone_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BoneBox/HBoxContainer/RemoveBone" to="." method="_on_remove_bone_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BrainBox/HBoxContainer/AddBrain" to="." method="_on_add_brain_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BrainBox/HBoxContainer/RemoveBrain" to="." method="_on_remove_brain_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BloodBox/HBoxContainer/AddBlood" to="." method="_on_add_blood_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/BloodBox/HBoxContainer/RemoveBlood" to="." method="_on_remove_blood_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/DungBox/HBoxContainer/AddDung" to="." method="_on_add_dung_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/PanelContainer/MarginContainer/VBoxContainer/DungBox/HBoxContainer/RemoveDung" to="." method="_on_remove_dung_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer/CraftCell" to="." method="_on_craft_cell_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Body/MarginContainer/HBoxContainer2/Summary/VBoxContainer/ClearCell" to="." method="_on_clear_cell_pressed"]
