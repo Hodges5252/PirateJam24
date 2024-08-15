@@ -13,6 +13,7 @@ func _ready():
 	$quant.text = str(quant)
 
 func set_image(image):
+	print("loading" + image)
 	$pic.texture = load(image)
 
 func set_text(value : int):

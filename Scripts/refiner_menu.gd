@@ -63,12 +63,14 @@ func update_results():
 		x += 1
 
 func _on_add_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	add_component()
 	gen_parts()
 	update_text()
 
 
 func _on_convert_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	gen_parts()
 	save_results()
 	clear_everything()
@@ -76,6 +78,7 @@ func _on_convert_pressed():
 
 
 func _on_cancel_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	return_components()
 	clear_everything()
 	update_text()
@@ -85,3 +88,10 @@ func _on_close_pressed():
 	_on_cancel_pressed()
 	visible = false
 	closed.emit()
+
+
+func _on_visibility_changed():
+	if visible:
+		MusicPlayer.play_FX(MusicPlayer.menu_open)
+	else:
+		MusicPlayer.play_FX(MusicPlayer.menu_close)

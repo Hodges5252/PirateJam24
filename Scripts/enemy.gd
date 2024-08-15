@@ -7,6 +7,15 @@ extends CharacterBody2D
 @export var quantity = 1
 var body_count = 0
 
+@export var roar_base : String
+@export var hit_base : String
+@export var die_base : String
+
+
+@onready var roar = load(roar_base)
+@onready var hit = load(hit_base)
+@onready var die = load(die_base)
+
 var target : Node2D
 var alive = true
 var dying = false
@@ -43,8 +52,10 @@ func _process(delta):
 func take_damage(damage):
 	if alive:
 		if health > 0:
+			MusicPlayer.play_FX(hit)
 			health -= damage
 		if health <= 0:
+			MusicPlayer.play_FX(die)
 			dying = true
 			sync_play("death")
 			speed = 0
@@ -62,6 +73,7 @@ func flip_sprites(flip):
 
 func _on_range_body_entered(body):
 	if body.has_method("get_input"):
+		MusicPlayer.play_FX(roar)
 		target = body
 
 

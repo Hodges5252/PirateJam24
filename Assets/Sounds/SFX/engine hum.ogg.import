@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxlv5apy563v3"
+path="res://.godot/imported/engine hum.ogg-8a151e43f5b332d50196bcd69381fcbe.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/engine hum.ogg"
+dest_files=["res://.godot/imported/engine hum.ogg-8a151e43f5b332d50196bcd69381fcbe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

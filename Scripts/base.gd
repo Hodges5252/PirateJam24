@@ -4,10 +4,31 @@ var can_mine = false
 var can_cell = false
 var can_ref = false
 var can_craft = false
-
+var playing 
 @onready var SceneTransition = $CanvasLayer/Fade
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$NPC.complete.connect(finished_playing)
+	Inventory.trip_count += 1
+	print("Trip " + str(Inventory.trip_count))
+	if Inventory.trip_count >= 4 and not Inventory.heard_spider:
+		$NPC.set_dialogue(Inventory.spider_dialogue)
+		print("Spiders")
+		playing = "Spiders"
+	elif Inventory.trip_count >= 0 and not Inventory.heard_first:
+		$NPC.set_dialogue(Inventory.first_dialogue)
+		print("First")
+		playing = "First"
+	elif Inventory.trip_count >= 1 and not Inventory.heard_second:
+		$NPC.set_dialogue(Inventory.second_dialogue)
+		print("Second")
+		playing = "Second"
+	else:
+		$NPC.set_dialogue(Inventory.cell_dialogue)
+		print("cell")
+	if Inventory.trip_count >= 4:
+		$Spiders.visible = true
+	MusicPlayer._play_music(MusicPlayer.base)
 	SceneTransition.get_node("black").color.a = 255
 	$CanvasLayer/Fade.play("fade_in")
 	
@@ -19,6 +40,15 @@ func _ready():
 	
 	if ValManager.repair_progress["Drill"]:
 		$DrillM/DrillArea/DrillMenu.set_oil(10)
+
+func finished_playing():
+	match playing:
+		"First":
+			Inventory.heard_first = true
+		"Second":
+			Inventory.heard_second = true
+		"Spiders":
+			Inventory.heard_spider = true
 
 func close_menu():
 	$Player.toggle_walk(true)
@@ -69,6 +99,7 @@ func _process(_delta):
 		if can_craft:
 			$CraM/Crafting/CraftingMenu.set_visible(true)
 			$Player.toggle_walk(false)
+		$Player.break_spiders()
 
 
 func _on_drill_body_entered(_body):
@@ -137,3 +168,10 @@ func _on_close_crafting_pressed():
 
 func _on_area_2d_body_entered(_body):
 	$CanvasLayer/Fade.play("fade_out")
+
+
+func _on_check_body_entered(body):
+	if body.has_method("toggle_walk"):
+		if Inventory.equipped_cell == null:
+			$Player.toggle_inv(true)
+			$Player.toggle_walk(false)

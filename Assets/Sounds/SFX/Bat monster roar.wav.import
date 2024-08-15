@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ftwdegh0pim4"
+path="res://.godot/imported/Bat monster roar.wav-334aef36414f5c81d54a01c550479663.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/Bat monster roar.wav"
+dest_files=["res://.godot/imported/Bat monster roar.wav-334aef36414f5c81d54a01c550479663.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

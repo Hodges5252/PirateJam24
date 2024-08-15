@@ -15,9 +15,18 @@ func transfer_oil():
 	set_oil(0)
 
 func _on_close_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	visible = false
 	closed.emit()
 
 
 func _on_get_oil_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	transfer_oil()
+
+
+func _on_visibility_changed():
+	if visible:
+		MusicPlayer.play_FX(MusicPlayer.menu_open)
+	else:
+		MusicPlayer.play_FX(MusicPlayer.menu_close)

@@ -127,6 +127,7 @@ func _on_close_pressed():
 
 
 func _on_add_pc_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	if Inventory.check_quantity("Space Ore", 5):
 		if Inventory.check_quantity("Space Crystal", 5):
 			transfer("inventory", "objects", "Space Ore", 5)
@@ -136,6 +137,7 @@ func _on_add_pc_pressed():
 
 
 func _on_add_rc_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	if Inventory.check_quantity("Space Wood", 10):
 		if Inventory.check_quantity("Space Rock", 10):
 			transfer("inventory", "objects", "Space Wood", 10)
@@ -145,12 +147,21 @@ func _on_add_rc_pressed():
 
 
 func _on_craft_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	for items in craft_results:
 		transfer("results", "inventory", items, craft_results[items])
 	clear_everything()
 
 
 func _on_cancel_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	for items in crafting_objects:
 		transfer("objects", "inventory", items, crafting_objects[items])
 	clear_everything()
+
+
+func _on_visibility_changed():
+	if visible:
+		MusicPlayer.play_FX(MusicPlayer.menu_open)
+	else:
+		MusicPlayer.play_FX(MusicPlayer.menu_close)

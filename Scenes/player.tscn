@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://bkyjn37rbc7hs"]
+[gd_scene load_steps=98 format=3 uid="uid://bkyjn37rbc7hs"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8avm5"]
 [ext_resource type="Texture2D" uid="uid://dc22l4i2ud0hl" path="res://Assets/Sprites/player_sprite/whole/Main guy idle.png" id="2_h431t"]
@@ -591,13 +591,21 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_egx21"]
 radius = 24.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jigue"]
+radius = 9.0
+height = 32.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tx03h"]
+polygon = PackedVector2Array(-2, -4, -6, -4, -9, -2, -8, 0.999996, -5, 2, -1, 3, 3, 2, 6, 0, 3, -3)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 131
 collision_mask = 131
 platform_floor_layers = 0
 script = ExtResource("1_8avm5")
 
-[node name="HUD" parent="." instance=ExtResource("2_xprmu")]
+[node name="HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_xprmu")]
+player = NodePath("..")
 
 [node name="mouse" type="Area2D" parent="."]
 visible = false
@@ -1039,6 +1047,20 @@ collision_mask = 4
 position = Vector2(0, -29)
 shape = SubResource("CircleShape2D_egx21")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Damage" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
+position = Vector2(-1, -16)
+shape = SubResource("CapsuleShape2D_jigue")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_tx03h")
+
 [connection signal="animation_finished" from="whole" to="." method="_on_whole_animation_finished"]
 [connection signal="animation_finished" from="top" to="." method="_on_top_animation_finished"]
 [connection signal="pressed" from="HUD_old/HUD inv" to="." method="_on_hud_inv_pressed"]
@@ -1047,3 +1069,4 @@ shape = SubResource("CircleShape2D_egx21")
 [connection signal="pressed" from="Inventory/Inv close" to="." method="_on_inv_close_pressed"]
 [connection signal="area_entered" from="MeleeRange" to="." method="_on_melee_range_area_entered"]
 [connection signal="area_exited" from="MeleeRange" to="." method="_on_melee_range_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

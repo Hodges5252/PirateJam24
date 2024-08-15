@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbhoqfnu70xk1"]
+
+[ext_resource type="Script" path="res://Scripts/mid_cutscene.gd" id="1_6hhgu"]
+
+[node name="MidCutscene" type="CanvasLayer"]
+script = ExtResource("1_6hhgu")
+
+[node name="IntroCutscene" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="IntroCutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="IntroCutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="IntroCutscene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Label" type="Label" parent="IntroCutscene/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+horizontal_alignment = 1
+autowrap_mode = 2

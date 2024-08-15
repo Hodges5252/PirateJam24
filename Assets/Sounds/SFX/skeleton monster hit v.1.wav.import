@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dps06mr8qvkxa"
+path="res://.godot/imported/skeleton monster hit v.1.wav-06a31de8cca1f9a8dc329b78a1b9fbcc.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/skeleton monster hit v.1.wav"
+dest_files=["res://.godot/imported/skeleton monster hit v.1.wav-06a31de8cca1f9a8dc329b78a1b9fbcc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

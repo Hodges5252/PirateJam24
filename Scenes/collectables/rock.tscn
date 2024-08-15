@@ -43,6 +43,8 @@ size = Vector2(16, 14)
 [node name="Rock" type="StaticBody2D"]
 script = ExtResource("1_3sjis")
 item = "Space Rock"
+hit_base = "res://Assets/Sounds/SFX/rock hit.ogg"
+die_base = "res://Assets/Sounds/SFX/rock shatter.ogg"
 
 [node name="Outline" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)

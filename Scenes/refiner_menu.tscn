@@ -136,6 +136,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Cancel"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="RefinerMenu/MarginContainer/HBoxContainer/Header/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="RefinerMenu/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Add" to="." method="_on_add_pressed"]
 [connection signal="pressed" from="RefinerMenu/MarginContainer/HBoxContainer/VBoxContainer/Convert" to="." method="_on_convert_pressed"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://iokbsdcpmec6"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_h46oh"]
+[ext_resource type="Texture2D" uid="uid://op4aykedxpyg" path="res://Assets/UI/Cutscenes/menu page.png" id="1_pycag"]
+[ext_resource type="Texture2D" uid="uid://db1paxojblij6" path="res://Assets/UI/Cutscenes/logo only tada.png" id="2_0ixdb"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_h46oh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pycag")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = -88
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_0ixdb")
+expand_mode = 5
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Start
+"
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="." method="_on_button_pressed"]

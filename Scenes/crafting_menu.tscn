@@ -567,6 +567,7 @@ layout_mode = 2
 [node name="item_box54" parent="PanelContainer/MarginContainer/HBoxContainer/Bottom/HBoxContainer/MarginContainer4/Panel/MarginContainer/VBoxContainer/ResultGrid" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/HBoxContainer2/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/PowerCell/Panel/MarginContainer/HBoxContainer/CenterContainer/AddPC" to="." method="_on_add_pc_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Repair/Panel/MarginContainer/HBoxContainer/AddRC" to="." method="_on_add_rc_pressed"]

@@ -1,16 +1,62 @@
 extends CharacterBody2D
+signal is_dead
 
-@export var speed = 100
+@export var base_speed = 100
 @export var can_attack = true
+@export var outside = false
+
+@onready var swing = preload("res://Assets/Sounds/SFX/swing and a miss.ogg")
+
+var speed = 100
+
+var damage_rate = 5
+var shoot_drain = 5
+
+var speed_adjust = 0
+var melee_adjust = 0
+var drain_adjust = 0
+var health_adjust = 0
+var explode_adjust = 0
+var radiation = 0
+var can_explode = false
+
 
 var can_move = true
 var melee = false
 var playing = false
 
+var health = 100
+var dead = false
 
 func _ready():
+	speed = base_speed
 	play_whole("idle")
 	toggle_walk(false)
+	if outside:
+		if Inventory.equipped_cell == null:
+			health = 0
+		else:
+			speed_adjust = Inventory.equipped_cell.ability_values["Speed"]
+			speed += speed_adjust
+			melee_adjust = Inventory.equipped_cell.ability_values["Attack"]
+			drain_adjust = Inventory.equipped_cell.ability_values["Shoot"]
+			health_adjust = Inventory.equipped_cell.ability_values["Strength"]
+			health += health_adjust
+			radiation = Inventory.equipped_cell.rads
+			if Inventory.equipped_cell.ability_values["Explode"] > 0:
+				can_explode = true
+				explode_adjust = Inventory.equipped_cell.ability_values["Explode"]
+		$HUD.toggle_inv_button(false)
+		$HUD.toggle_home_button(false)
+	else:
+		health = 100
+		$HUD.set_max_health(health)
+		$HUD.toggle_inv_button(true)
+		$HUD.toggle_home_button(false)
+	$HUD.update_values()
+
+func toggle_inv(toggle):
+	$HUD.toggle_inv(toggle)
 
 func get_input():
 	if can_move:
@@ -51,6 +97,7 @@ func get_input():
 					shoot()
 
 func melee_attack():
+	MusicPlayer.play_FX(swing)
 	if velocity != Vector2(0,0):
 		$top.play("melee")
 		playing = true
@@ -65,7 +112,10 @@ func melee_attack():
 			if parent.has_method("break_col"):
 				parent.break_col()
 			if parent.has_method("take_damage"):
-				parent.take_damage(34)
+				if melee_adjust > 0:
+					parent.take_damage(34 * melee_adjust)
+				else:
+					parent.take_damage(34)
 
 
 func shoot():
@@ -79,22 +129,53 @@ func shoot():
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = $ShootPoint.global_position
 	new_bullet.global_rotation = $ShootPoint.global_rotation
+	if can_explode:
+		new_bullet.can_explode = true
+		new_bullet.explosion_damage = explode_adjust
 	var parent = get_parent()
 	parent.add_child(new_bullet)
+	Inventory.equipped_cell.lose_energy(shoot_drain - (shoot_drain * drain_adjust))
 
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		#print("Mouse Motion at: ", event.position)
 		$mouse.global_position = get_global_mouse_position()
-		#print("Box is at: ", $mouse.position)
 
-func _process(_delta):
+func _process(delta):
+	if dead:
+		is_dead.emit()
+		print("ided")
 	get_input()
 	move_and_slide()
 	$ShootPoint.look_at($mouse.global_position)
+	if outside:
+		if Inventory.equipped_cell != null:
+			if Inventory.equipped_cell.current_energy <= 0:
+				dead = true
+		if health <= 0:
+			dead = true
+		var overlapping_mobs = $Damage.get_overlapping_areas()
+		if overlapping_mobs.size() > 0:
+			health -= damage_rate * overlapping_mobs.size() * delta
+		if Inventory.equipped_cell.force_rads == true:
+				radiation = 100
+
+func break_spiders():
+	if $MeleeRange.has_overlapping_areas():
+		var area_list = $MeleeRange.get_overlapping_areas()
+		for areas in area_list:
+			var parent = areas.get_parent()
+			if parent.has_method("break_col") and parent.visible:
+				parent.break_col()
 
 func toggle_walk(can_walk):
+	if not can_walk:
+		speed = 0
+	else:
+		speed = base_speed
+		if Inventory.equipped_cell != null:
+			speed_adjust = Inventory.equipped_cell.ability_values["Speed"]
+			speed += speed_adjust
 	can_move = can_walk
 
 func sync_play(anim):
@@ -170,3 +251,12 @@ func _on_melee_range_area_entered(area):
 func _on_melee_range_area_exited(area):
 	if area.get_parent().has_method("get_input"):
 		melee = false
+
+
+func _on_timer_timeout():
+	if radiation > 0:
+		var value = randi_range(1, 100)
+		print("Value: " + str(value) + " Radiation: " + str(radiation))
+		if radiation >= value:
+			print("Ouch!")
+			health -= 5

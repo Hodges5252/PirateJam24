@@ -175,6 +175,8 @@ script = ExtResource("1_3fmb7")
 double = true
 item = "Space Flower"
 health = 1
+hit_base = "res://Assets/Sounds/SFX/wood hit.ogg"
+die_base = "res://Assets/Sounds/SFX/wood shatter.ogg"
 
 [node name="OutlineBot" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.999999, -23.5)

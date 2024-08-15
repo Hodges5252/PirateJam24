@@ -44,6 +44,8 @@ scale = Vector2(0.1, 0.1)
 script = ExtResource("1_7n7r0")
 item = "Space Spiders"
 health = 1
+hit_base = "res://Assets/Sounds/SFX/crystal hit.ogg"
+die_base = "res://Assets/Sounds/SFX/crystal shatter.ogg"
 
 [node name="Outline" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -33)

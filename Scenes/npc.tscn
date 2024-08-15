@@ -1,0 +1,177 @@
+[gd_scene load_steps=12 format=3 uid="uid://buj78235weapn"]
+
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_wutrr"]
+[ext_resource type="Texture2D" uid="uid://c6oebmdkkbfc5" path="res://Assets/Sprites/NPC/Npc idle.png" id="2_tl18g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lshb2"]
+atlas = ExtResource("2_tl18g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qat1j"]
+atlas = ExtResource("2_tl18g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6n7h"]
+atlas = ExtResource("2_tl18g")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1lwa"]
+atlas = ExtResource("2_tl18g")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdd8a"]
+atlas = ExtResource("2_tl18g")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86esu"]
+atlas = ExtResource("2_tl18g")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xw34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lshb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qat1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6n7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1lwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdd8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86esu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0fl4v"]
+radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_grf01"]
+radius = 64.0078
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_wutrr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_2xw34")
+autoplay = "default"
+frame_progress = 0.676021
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_0fl4v")
+
+[node name="talkZone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="talkZone"]
+shape = SubResource("CircleShape2D_grf01")
+
+[node name="Prompt" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="Prompt"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Prompt/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Prompt" type="Label" parent="Prompt/Control/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Press 'E' to talk to the Engineer"
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="Dialogue"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialogue/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 215
+theme_override_constants/margin_top = 435
+theme_override_constants/margin_right = 215
+theme_override_constants/margin_bottom = 80
+
+[node name="PanelContainer" type="PanelContainer" parent="Dialogue/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialogue/Control/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogue/Control/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Dialogue/Control/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Engineer"
+vertical_alignment = 1
+
+[node name="Words" type="Label" parent="Dialogue/Control/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dialogue/Control/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="Next" type="Button" parent="Dialogue/Control/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Next"
+
+[node name="Close" type="Button" parent="Dialogue/Control/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close"
+
+[connection signal="body_entered" from="talkZone" to="." method="_on_talk_zone_body_entered"]
+[connection signal="body_exited" from="talkZone" to="." method="_on_talk_zone_body_exited"]
+[connection signal="visibility_changed" from="Dialogue" to="." method="_on_dialogue_visibility_changed"]
+[connection signal="pressed" from="Dialogue/Control/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Dialogue/Control/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]

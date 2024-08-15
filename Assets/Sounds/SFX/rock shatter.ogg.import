@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bat5kxrild8kh"
+path="res://.godot/imported/rock shatter.ogg-e8b5da369a595b2027f3b5ff6403bae2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/SFX/rock shatter.ogg"
+dest_files=["res://.godot/imported/rock shatter.ogg-e8b5da369a595b2027f3b5ff6403bae2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

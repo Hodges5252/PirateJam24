@@ -2,7 +2,59 @@ extends Node2D
 
 signal updated
 
-var start_value = 100
+var cell_path = preload("res://Scripts/cell.gd")
+var cell : Cell
+
+var trip_count = -1
+
+var start_value = 0
+
+var mid_scene = true
+
+var heard_first = false
+var heard_second = false
+var heard_spider = false
+
+var first_dialogue = [
+	"All the machines are broken!",
+	"Monsters must have gotten in",
+	"You will need to gather rock and wood to make repair materials",
+	"In the base, go up to a machine and press 'e' to access the menu",
+	"The Drill in the left corner is where you get oil for fuel",
+	"The Cell Constructor above us is where you make Power Cells",
+	"The machines to the left are the crafter and refiner",
+	"The crafter is where you make empty cells and repair components",
+	"The refiner is where you can convert monster parts into useful items",
+	"You'll need to make repair components before anything else",
+	"Your current power cell is pretty weak, so be careful!",
+	"Outside, use the mouse to attack and gather resources",
+	"Click near yourself to do a melee attack and mine items",
+	"Click far away from yourself to shoot your blaster",
+	"Be careful! Your blaster will drain your energy.",
+	"Good luck! I wish I could help, but I'm too hurt."
+]
+
+var second_dialogue = [
+	"You'll want to repair the drill first, then the Cell Constructor.",
+	"The drill will pump oil when you are outside, you'll need it for the cells.",
+]
+
+var cell_dialogue = [
+	"Here's how to use the Cell Constructor.",
+	"First, you need at least one oil and one Empty Cell.",
+	"After that, you can add other items, each one does something different.",
+	"Those items also add radiation, which can hurt you over time.",
+	"Once you've finished your cell, click the craft button to save it.",
+	"Once that's done, you can equip it from your inventory.",
+	"First, select the cell you want.",
+	"If the selected cell has any powers, it will be shown in the box below it.",
+	"Click add to add the cell, you'll know it works if the energy or radiation changes"
+]
+
+var spider_dialogue = [
+	"A spider egg hatched while you were gone",
+	"Can you take care of the webs for me?"
+]
 
 var inventory = {
 	"Space Rock"      : start_value,
@@ -41,9 +93,16 @@ var inv_pics = {
 }
 
 var cell_list = []
-
+var equipped_cell : Cell
+var selected_cell : Cell
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	cell = cell_path.new()
+	cell.add_items("Empty Cell", 1)
+	cell.add_items("Space Oil", 3)
+	
+	equipped_cell = cell
+	
 	for item in inventory:
 		if inventory[item] < 0:
 			inventory[item] = 0

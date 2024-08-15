@@ -7,7 +7,11 @@ extends StaticBody2D
 @export var color_change : bool
 
 var body_count = 0
+@export var hit_base : String
+@export var die_base : String
 
+@onready var hit = load(hit_base)
+@onready var die = load(die_base)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,5 +62,8 @@ func _on_hilight_area_exited(_area):
 func break_col():
 	health -= 1
 	if health <= 0:
+		MusicPlayer.play_FX(die)
 		Inventory.add_items(item, quantity)
 		queue_free()
+	else:
+		MusicPlayer.play_FX(hit)

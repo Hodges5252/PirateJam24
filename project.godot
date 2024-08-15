@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="InTheShadowOfStars"
-run/main_scene="res://Scenes/base.tscn"
+run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
 [autoload]
@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 Inventory="*res://Scripts/Inventory.gd"
 SceneManager="*res://Scripts/scene_manager.gd"
 ValManager="*res://Scripts/val_manager.gd"
+MusicPlayer="*res://music_player.gd"
 
 [display]
 

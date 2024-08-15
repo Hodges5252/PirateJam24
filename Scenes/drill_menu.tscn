@@ -81,5 +81,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Get Oil"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Header/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/GetOil" to="." method="_on_get_oil_pressed"]

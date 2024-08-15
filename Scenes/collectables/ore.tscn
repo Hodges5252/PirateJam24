@@ -173,6 +173,8 @@ size = Vector2(31, 31)
 script = ExtResource("1_you5q")
 double = true
 item = "Space Ore"
+hit_base = "res://Assets/Sounds/SFX/rock hit.ogg"
+die_base = "res://Assets/Sounds/SFX/rock shatter.ogg"
 
 [node name="OutlineBot" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)

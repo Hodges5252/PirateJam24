@@ -71,8 +71,9 @@ func new_cell():
 	update_everything()
 
 func update_bars():
-	%PowerBar.value = cell.energy
-	%RadBar.value = cell.rads
+	if cell != null:
+		%PowerBar.value = cell.max_energy
+		%RadBar.value = cell.rads
 
 func add_items(item):
 	if item == "Empty Cell":
@@ -90,66 +91,89 @@ func remove_items(item):
 
 func _on_visibility_changed():
 	if visible:
+		MusicPlayer.play_FX(MusicPlayer.menu_open)
+	else:
+		MusicPlayer.play_FX(MusicPlayer.menu_close)
+	if visible:
 		new_cell()
 
 func _on_add_cell_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	add_items("Empty Cell")
 
 func _on_remove_cell_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	remove_items("Empty Cell")
 
 func _on_add_oil_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	add_items("Space Oil")
 
 func _on_remove_oil_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	remove_items("Space Oil")
 
 func _on_close_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	_on_clear_cell_pressed()
 	visible = false
 	closed.emit()
 
 func _on_craft_cell_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	if check_validity():
 		Inventory.cell_list.append(cell)
 		new_cell()
 
 func _on_clear_cell_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	cell.return_cell()
 
 func _on_add_flower_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	add_items("Space Flower")
 
 func _on_remove_flower_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	remove_items("Space Flower")
 
 func _on_add_spider_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	add_items("Space Spiders")
 
 func _on_remove_spider_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	remove_items("Space Spiders")
 
 func _on_add_bone_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	add_items("Alien Bone")
 
 func _on_remove_bone_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	remove_items("Alien Bone")
 
 func _on_add_brain_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	add_items("Alien Brain")
 
 func _on_remove_brain_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	remove_items("Alien Brain")
 
 func _on_add_blood_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	add_items("Alien Blood")
 
 func _on_remove_blood_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	remove_items("Alien Blood")
 
 func _on_add_dung_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	add_items("Alien Dung")
 
 func _on_remove_dung_pressed():
+	MusicPlayer.play_FX(MusicPlayer.button_click)
 	remove_items("Alien Dung")
 

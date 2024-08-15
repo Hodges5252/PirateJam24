@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://coooxi7uv65cw" path="res://Assets/UI/try this background.png" id="1_bu6hi"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Cutscene" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

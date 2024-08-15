@@ -72,6 +72,8 @@ size = Vector2(27, 30)
 [node name="Tree" type="StaticBody2D"]
 script = ExtResource("1_swmjp")
 double = true
+hit_base = "res://Assets/Sounds/SFX/wood hit.ogg"
+die_base = "res://Assets/Sounds/SFX/wood shatter.ogg"
 
 [node name="OutlineBot" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -16)
