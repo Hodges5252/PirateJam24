@@ -138,10 +138,10 @@ func _on_add_pc_pressed():
 
 func _on_add_rc_pressed():
 	MusicPlayer.play_FX(MusicPlayer.button_click)
-	if Inventory.check_quantity("Space Wood", 10):
-		if Inventory.check_quantity("Space Rock", 10):
-			transfer("inventory", "objects", "Space Wood", 10)
-			transfer("inventory", "objects", "Space Rock", 10)
+	if Inventory.check_quantity("Space Wood", 3):
+		if Inventory.check_quantity("Space Rock", 3):
+			transfer("inventory", "objects", "Space Wood", 3)
+			transfer("inventory", "objects", "Space Rock", 3)
 			add_results("Repair Component", 1)
 			update_everything()
 

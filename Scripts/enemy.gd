@@ -11,6 +11,8 @@ var body_count = 0
 @export var hit_base : String
 @export var die_base : String
 
+@export var knockback_power = 500
+
 
 @onready var roar = load(roar_base)
 @onready var hit = load(hit_base)
@@ -26,6 +28,8 @@ func _ready():
 		$top.visible = false
 	sync_play("idle")
 
+func is_alive():
+	return alive
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -49,16 +53,22 @@ func _process(delta):
 		elif body_count > 0:
 			$top.set_visible(true)
 
-func take_damage(damage):
+func take_damage(damage, enem_velocity: Vector2):
 	if alive:
 		if health > 0:
 			MusicPlayer.play_FX(hit)
 			health -= damage
+			knockback(enem_velocity)
 		if health <= 0:
 			MusicPlayer.play_FX(die)
 			dying = true
 			sync_play("death")
 			speed = 0
+
+func knockback(enemyVelocity: Vector2):
+	var knock_direction = (enemyVelocity - velocity).normalized() * knockback_power
+	move_and_slide()
+	pass
 
 func sync_play(play):
 	if bird and alive:
@@ -88,6 +98,10 @@ func _on_bot_animation_finished():
 	sync_play("dead")
 	alive = false
 	dying = false
+	var body_collision = find_child("Hitbox")
+	body_collision.monitorable = false
+	body_collision.monitoring = false
+	
 
 
 func _on_object_area_entered(area):

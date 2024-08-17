@@ -126,12 +126,12 @@ size_flags_vertical = 4
 [node name="item_box" parent="PanelContainer/MarginContainer/HBoxContainer/Repair/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 pic = "res://Assets/UI/Icons/Wood.png"
-quant = 10
+quant = 3
 
 [node name="item_box2" parent="PanelContainer/MarginContainer/HBoxContainer/Repair/Panel/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("1_4m4wx")]
 layout_mode = 2
 pic = "res://Assets/UI/Icons/Rock collect.png"
-quant = 10
+quant = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/Repair/Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2

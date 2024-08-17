@@ -27,8 +27,8 @@ func _process(_delta):
 			%Close.visible = true
 
 func set_dialogue(words):
-	dialogue = words
-	saved_dialogue = dialogue
+	dialogue = words.duplicate()
+	saved_dialogue = words.duplicate()
 
 func _on_talk_zone_body_entered(body):
 	if dialogue.size() > 0:
@@ -51,7 +51,7 @@ func _on_close_pressed():
 	MusicPlayer.play_FX(MusicPlayer.button_click)
 	$Dialogue.visible = false
 	player.toggle_walk(true)
-	dialogue = saved_dialogue
+	dialogue = saved_dialogue.duplicate()
 	complete.emit()
 
 

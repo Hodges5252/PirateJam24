@@ -9,8 +9,8 @@ signal is_dead
 
 var speed = 100
 
-var damage_rate = 5
-var shoot_drain = 5
+var damage_rate = 10
+var shoot_drain = 3
 
 var speed_adjust = 0
 var melee_adjust = 0
@@ -90,11 +90,9 @@ func get_input():
 		velocity = input_direction * speed
 	if can_attack:
 		if Input.is_action_just_pressed("shoot"):
-			if not playing:
-				if melee:
-					melee_attack()
-				else:
-					shoot()
+			shoot()
+		if Input.is_action_just_pressed("select"):
+			melee_attack()
 
 func melee_attack():
 	MusicPlayer.play_FX(swing)
@@ -112,10 +110,15 @@ func melee_attack():
 			if parent.has_method("break_col"):
 				parent.break_col()
 			if parent.has_method("take_damage"):
-				if melee_adjust > 0:
-					parent.take_damage(34 * melee_adjust)
+				var vel_val
+				if velocity != Vector2(0,0):
+					vel_val = velocity
 				else:
-					parent.take_damage(34)
+					vel_val = -parent.velocity
+				if melee_adjust > 0:
+					parent.take_damage(34 * melee_adjust, vel_val)
+				else:
+					parent.take_damage(34, vel_val)
 
 
 func shoot():
@@ -125,16 +128,17 @@ func shoot():
 	else:
 		play_whole("shoot")
 		playing = true
-	const BULLET = preload("res://Scenes/bullet.tscn")
-	var new_bullet = BULLET.instantiate()
-	new_bullet.global_position = $ShootPoint.global_position
-	new_bullet.global_rotation = $ShootPoint.global_rotation
-	if can_explode:
-		new_bullet.can_explode = true
-		new_bullet.explosion_damage = explode_adjust
-	var parent = get_parent()
-	parent.add_child(new_bullet)
-	Inventory.equipped_cell.lose_energy(shoot_drain - (shoot_drain * drain_adjust))
+	if Inventory.equipped_cell.current_energy > 0:
+		const BULLET = preload("res://Scenes/bullet.tscn")
+		var new_bullet = BULLET.instantiate()
+		new_bullet.global_position = $ShootPoint.global_position
+		new_bullet.global_rotation = $ShootPoint.global_rotation
+		if can_explode:
+			new_bullet.can_explode = true
+			new_bullet.explosion_damage = explode_adjust
+		var parent = get_parent()
+		parent.add_child(new_bullet)
+		Inventory.equipped_cell.lose_energy(shoot_drain - (shoot_drain * drain_adjust))
 
 
 func _input(event):
@@ -149,9 +153,7 @@ func _process(delta):
 	move_and_slide()
 	$ShootPoint.look_at($mouse.global_position)
 	if outside:
-		if Inventory.equipped_cell != null:
-			if Inventory.equipped_cell.current_energy <= 0:
-				dead = true
+		#if Inventory.equipped_cell != null:
 		if health <= 0:
 			dead = true
 		var overlapping_mobs = $Damage.get_overlapping_areas()
@@ -259,4 +261,4 @@ func _on_timer_timeout():
 		print("Value: " + str(value) + " Radiation: " + str(radiation))
 		if radiation >= value:
 			print("Ouch!")
-			health -= 5
+			health -= 7

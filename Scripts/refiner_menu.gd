@@ -40,8 +40,9 @@ func clear_components():
 	base_component["Alien Parts"] = 0
 
 func add_component():
-	base_component["Alien Parts"] = Inventory.inventory["Alien Parts"]
-	Inventory.remove_items("Alien Parts", base_component["Alien Parts"])
+	if Inventory.check_quantity("Alien Parts", 1):
+		base_component["Alien Parts"] = Inventory.inventory["Alien Parts"]
+		Inventory.remove_items("Alien Parts", base_component["Alien Parts"])
 
 func return_components():
 	Inventory.add_items("Alien Parts", base_component["Alien Parts"])
@@ -94,4 +95,5 @@ func _on_visibility_changed():
 	if visible:
 		MusicPlayer.play_FX(MusicPlayer.menu_open)
 	else:
+		clear_everything()
 		MusicPlayer.play_FX(MusicPlayer.menu_close)

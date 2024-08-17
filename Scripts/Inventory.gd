@@ -28,8 +28,8 @@ var first_dialogue = [
 	"You'll need to make repair components before anything else",
 	"Your current power cell is pretty weak, so be careful!",
 	"Outside, use the mouse to attack and gather resources",
-	"Click near yourself to do a melee attack and mine items",
-	"Click far away from yourself to shoot your blaster",
+	"Click 'e' to do a melee attack and mine items",
+	"Click to shoot your blaster",
 	"Be careful! Your blaster will drain your energy.",
 	"Good luck! I wish I could help, but I'm too hurt."
 ]
@@ -102,6 +102,7 @@ func _ready():
 	cell.add_items("Space Oil", 3)
 	
 	equipped_cell = cell
+	cell_list.append(cell)
 	
 	for item in inventory:
 		if inventory[item] < 0:

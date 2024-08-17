@@ -31,6 +31,7 @@ bg_color = Color(0.988235, 1, 0, 1)
 script = ExtResource("1_cvlrk")
 
 [node name="PlayerInventory" parent="." instance=ExtResource("2_d230t")]
+layer = 2
 visible = false
 
 [node name="Control" type="MarginContainer" parent="."]

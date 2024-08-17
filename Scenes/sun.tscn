@@ -723,15 +723,15 @@ material = SubResource("ShaderMaterial_yge51")
 polygon = PackedVector2Array(3134, -1024, 4, -1029, -45, 1127, 3138, 1109)
 
 [node name="Player" parent="." instance=ExtResource("3_h6drt")]
-position = Vector2(194, -16)
+position = Vector2(119, 14)
 slide_on_ceiling = false
 base_speed = 150
 outside = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-194, 16)
+position = Vector2(0, -17)
 zoom = Vector2(2, 2)
-limit_left = 60
+limit_left = 55
 limit_top = -985
 limit_right = 3055
 limit_bottom = 1065
@@ -1287,6 +1287,7 @@ position = Vector2(2801, 601)
 position = Vector2(2550, 452)
 
 [node name="enemies" type="CanvasGroup" parent="."]
+position = Vector2(192, -34)
 
 [node name="Skeleton" parent="." instance=ExtResource("11_ccar0")]
 position = Vector2(207, 255)

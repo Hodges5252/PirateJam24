@@ -589,7 +589,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_egx21"]
-radius = 24.0
+radius = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jigue"]
 radius = 9.0
@@ -605,6 +605,7 @@ platform_floor_layers = 0
 script = ExtResource("1_8avm5")
 
 [node name="HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_xprmu")]
+layer = 2
 player = NodePath("..")
 
 [node name="mouse" type="Area2D" parent="."]
@@ -895,6 +896,7 @@ offset_bottom = 546.0
 text = "Quit"
 
 [node name="Inventory" type="CanvasLayer" parent="."]
+layer = 3
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Inventory"]
@@ -1044,7 +1046,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeRange"]
-position = Vector2(0, -29)
+position = Vector2(-1, -17)
 shape = SubResource("CircleShape2D_egx21")
 
 [node name="Timer" type="Timer" parent="."]

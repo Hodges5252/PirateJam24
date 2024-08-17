@@ -8,8 +8,6 @@ var dialogue = [
 func _ready():
 	if Inventory.equipped_cell == null:
 		dialogue.push_front("You tried to go outside without a Power Cell equipped...")
-	elif Inventory.equipped_cell.current_energy <= 0:
-		dialogue.push_front("Your Power Cell ran out of energy...")
 	else:
 		dialogue.push_front("You hear your suit's warning system activate as your health becomes critical...")
 	$DeathCutscene/Text.text = dialogue.pop_front()

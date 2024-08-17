@@ -30,7 +30,7 @@ func _on_body_entered(_body):
 
 func _on_area_entered(area):
 	if area.get_parent().has_method("take_damage"):
-		area.get_parent().take_damage(25)
+		area.get_parent().take_damage(25, position)
 		if can_explode:
 			var body_list = $Explosion.get_overlapping_areas()
 			for bodies in body_list:
